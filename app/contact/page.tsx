@@ -13,7 +13,7 @@ const socials = [
 	},
 	{
 		icon: <Mail size={20} />,
-		href: "mailto:umanga@portpro.io",
+		href: "mailto:umanga.shrestha@portpro.io",
 		label: "Email",
 		handle: "umanga@portpro.io",
 	},
