@@ -6,23 +6,23 @@ import { Analytics } from "./components/analytics";
 
 export const metadata: Metadata = {
 	title: {
-		default: "chronark.com",
-		template: "%s | chronark.com",
+		default: "Umanga Deep Shrestha, UI/UX",
+		template: "%s | umangashrestha.com.np",
 	},
-	description: "Software engineer at upstash.com and founder of planetfall.io",
+	description: "Lead UI/UX Engineer at Portpro",
 	openGraph: {
-		title: "chronark.com",
+		title: "umangashrestha.com.np",
 		description:
-			"Software engineer at upstash.com and founder of planetfall.io",
-		url: "https://chronark.com",
-		siteName: "chronark.com",
-		images: [
-			{
-				url: "https://chronark.com/og.png",
-				width: 1920,
-				height: 1080,
-			},
-		],
+			"Lead UI/UX Engineer at Portpro",
+		url: "https://umangashrestha,com.np",
+		siteName: "umangashrestha,com.np",
+		// images: [
+		// 	{
+		// 		url: "https://chronark.com/og.png",
+		// 		width: 1920,
+		// 		height: 1080,
+		// 	},
+		// ],
 		locale: "en-US",
 		type: "website",
 	},
@@ -37,10 +37,7 @@ export const metadata: Metadata = {
 			"max-snippet": -1,
 		},
 	},
-	twitter: {
-		title: "Chronark",
-		card: "summary_large_image",
-	},
+	
 	icons: {
 		shortcut: "/favicon.png",
 	},
