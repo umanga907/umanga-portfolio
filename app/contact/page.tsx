@@ -13,9 +13,9 @@ const socials = [
 	},
 	{
 		icon: <Mail size={20} />,
-		href: "mailto:umanga.shrestha@portpro.io",
+		href: "mailto:umanga.907@gmail.com",
 		label: "Email",
-		handle: "umanga@portpro.io",
+		handle: "umanga.907@gmail.com",
 	},
 	{
 		icon: <Github size={20} />,
