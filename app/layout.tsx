@@ -14,8 +14,8 @@ export const metadata: Metadata = {
 		title: "umangashrestha.com.np",
 		description:
 			"Lead UI/UX Engineer at Portpro",
-		url: "https://umangashrestha,com.np",
-		siteName: "umangashrestha,com.np",
+		url: "https://umangashrestha.com.np",
+		siteName: "umangashrestha.com.np",
 		// images: [
 		// 	{
 		// 		url: "https://chronark.com/og.png",
