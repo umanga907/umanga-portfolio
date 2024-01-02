@@ -16,13 +16,6 @@ export const metadata: Metadata = {
 			"Lead UI/UX Engineer at Portpro",
 		url: "https://umangashrestha.com.np",
 		siteName: "umangashrestha.com.np",
-		// images: [
-		// 	{
-		// 		url: "https://chronark.com/og.png",
-		// 		width: 1920,
-		// 		height: 1080,
-		// 	},
-		// ],
 		locale: "en-US",
 		type: "website",
 	},
