@@ -7,9 +7,11 @@ import { SectionLabel } from "./section-wrapper";
 const stats = [
   { value: 9, suffix: "+", label: "Years Experience" },
   { value: 8000, suffix: "+", label: "GitHub Contributions" },
-  { value: 81, suffix: "+", label: "Reusable Components" },
-  { value: 130, suffix: "+", label: "Product Screens" },
+  { value: 6, suffix: "+", label: "Years One Platform" },
   { value: 23, suffix: "", label: "Freelance Projects" },
+  { value: 808, suffix: "", label: "Freelance Hours" },
+  { value: 20, suffix: "+", label: "Websites Built" },
+  { value: 5, suffix: "★", label: "Near-Perfect Reviews" },
 ];
 
 function AnimatedCounter({
@@ -64,7 +66,7 @@ export function Stats() {
       >
         <SectionLabel label="Impact" />
 
-        <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-5">
+        <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-4">
           {stats.map((stat) => (
             <div key={stat.label} className="text-center">
               <p className="font-mono text-4xl font-bold text-[var(--color-text-primary)] md:text-5xl">
