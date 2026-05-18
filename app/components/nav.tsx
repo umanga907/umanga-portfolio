@@ -1,55 +1,81 @@
 "use client";
-import { ArrowLeft } from "lucide-react";
-import Link from "next/link";
-import React, { useEffect, useRef, useState } from "react";
 
-export const Navigation: React.FC = () => {
-	const ref = useRef<HTMLElement>(null);
-	const [isIntersecting, setIntersecting] = useState(true);
+import { useEffect, useState } from "react";
 
-	useEffect(() => {
-		if (!ref.current) return;
-		const observer = new IntersectionObserver(([entry]) =>
-			setIntersecting(entry.isIntersecting),
-		);
+const links = [
+  { href: "#about", label: "About" },
+  { href: "#skills", label: "Skills" },
+  { href: "#experience", label: "Experience" },
+  { href: "#projects", label: "Projects" },
+  { href: "#services", label: "Services" },
+  { href: "#contact", label: "Contact" },
+];
 
-		observer.observe(ref.current);
-		return () => observer.disconnect();
-	}, []);
+export function Nav() {
+  const [scrolled, setScrolled] = useState(false);
+  const [active, setActive] = useState("");
 
-	return (
-		<header ref={ref}>
-			<div
-				className={`fixed inset-x-0 top-0 z-50 backdrop-blur  duration-200 border-b  ${
-					isIntersecting
-						? "bg-zinc-900/0 border-transparent"
-						: "bg-zinc-900/500  border-zinc-800 "
-				}`}
-			>
-				<div className="container flex flex-row-reverse items-center justify-between p-6 mx-auto">
-					<div className="flex justify-between gap-8">
-						<Link
-							href="/projects"
-							className="duration-200 text-zinc-400 hover:text-zinc-100"
-						>
-							Projects
-						</Link>
-						<Link
-							href="/contact"
-							className="duration-200 text-zinc-400 hover:text-zinc-100"
-						>
-							Contact
-						</Link>
-					</div>
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 50);
 
-					<Link
-						href="/"
-						className="duration-200 text-zinc-300 hover:text-zinc-100"
-					>
-						<ArrowLeft className="w-6 h-6 " />
-					</Link>
-				</div>
-			</div>
-		</header>
-	);
-};
+      const sections = links.map((l) =>
+        document.getElementById(l.href.slice(1))
+      );
+      const scrollPos = window.scrollY + 120;
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
+        if (section && section.offsetTop <= scrollPos) {
+          setActive(links[i].href);
+          return;
+        }
+      }
+      setActive("");
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <nav
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "border-b border-[var(--color-border-subtle)] bg-[var(--color-background)]/80 backdrop-blur-xl"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
+        <a
+          href="#"
+          className="font-mono text-sm font-medium text-[var(--color-text-primary)] transition-colors hover:text-[var(--color-accent)]"
+        >
+          UDS
+        </a>
+        <div className="hidden items-center gap-8 md:flex">
+          {links.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className={`text-sm transition-colors ${
+                active === link.href
+                  ? "text-[var(--color-text-primary)]"
+                  : "text-[var(--color-text-muted)] hover:text-[var(--color-text-secondary)]"
+              }`}
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+        <a
+          href="mailto:umanga.907@gmail.com"
+          className="rounded-lg bg-[var(--color-accent)] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[var(--color-accent-hover)]"
+        >
+          Hire Me
+        </a>
+      </div>
+    </nav>
+  );
+}
