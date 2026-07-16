@@ -6,11 +6,18 @@ import { SectionLabel, SectionTitle } from "./section-wrapper";
 
 const timeline = [
   {
+    company: "Independent",
+    role: "Design Engineer",
+    period: "Apr 2026 — Present",
+    description:
+      "Designing and building client products end-to-end: sauravdecor.com (full-stack TypeScript/Next.js), daretodreamadventures.com (Next.js + headless CMS), estherperez.com (editorial fine-art gallery).",
+  },
+  {
     company: "PortPro",
     role: "Director of UI/UX",
     period: "Dec 2019 — Mar 2026",
     description:
-      "Built the entire React component library, SCSS design system, and developer tooling from scratch. Primary frontend engineer across 130+ product screens spanning the entire platform. 4,256 commits over 6+ years.",
+      "Built the React component library and SCSS design system from scratch — 80+ components, platform-wide dark mode. Directed UI/UX across hundreds of operational screens; top-5 contributor with 2,000+ commits. Before leaving, encoded the design system into Cursor rules the team shipped with.",
   },
   {
     company: "Freelance (Upwork)",
@@ -24,7 +31,7 @@ const timeline = [
     role: "Frontend Developer",
     period: "2018",
     description:
-      "Built 20+ responsive websites. Developed eLearning platform frontend.",
+      "Built responsive corporate websites and an eLearning platform frontend.",
   },
   {
     company: "Jyaasa",

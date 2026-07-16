@@ -40,8 +40,8 @@ export function Contact() {
 
       <p className="mb-10 max-w-2xl text-base text-[var(--color-text-muted)] md:text-lg">
         I&apos;m available for freelance projects, consulting, and full-time
-        opportunities. If you need a senior frontend engineer who cares about
-        craft, let&apos;s talk.
+        opportunities. If you need a design engineer who cares about craft,
+        let&apos;s talk.
       </p>
 
       <div className="mb-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

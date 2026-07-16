@@ -5,12 +5,12 @@ import { useEffect, useRef, useState } from "react";
 import { SectionLabel } from "./section-wrapper";
 
 const stats = [
-  { value: 9, suffix: "+", label: "Years Experience" },
+  { value: 11, suffix: "", label: "Years Experience" },
   { value: 8000, suffix: "+", label: "GitHub Contributions" },
   { value: 6, suffix: "+", label: "Years One Platform" },
+  { value: 80, suffix: "+", label: "Design-System Components" },
   { value: 23, suffix: "", label: "Freelance Projects" },
   { value: 808, suffix: "", label: "Freelance Hours" },
-  { value: 20, suffix: "+", label: "Websites Built" },
   { value: 5, suffix: "★", label: "Near-Perfect Reviews" },
 ];
 

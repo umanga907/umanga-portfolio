@@ -1,3 +1,4 @@
+import { ExternalLink } from "lucide-react";
 import {
   SectionWrapper,
   SectionLabel,
@@ -6,21 +7,27 @@ import {
 
 const projects = [
   {
-    title: "Full-Stack Frontend Platform",
+    title: "Logistics TMS Frontend Platform",
     description:
-      "Primary frontend engineer for an entire logistics TMS. Built and maintained 130+ screens: dispatcher board, load management, billing, driver planner, tracking, reports, settings, email, carrier management, appointments, and more. 4,256 commits over 6+ years.",
+      "Directed UI/UX of a drayage TMS used by 500+ trucking companies across the U.S. Built and maintained hundreds of operational screens: dispatcher board, load management, billing, driver planner, tracking, reports, email, and more. Top-5 contributor with 2,000+ commits over 6+ years.",
     tags: ["React", "SCSS", "Platform Engineering", "Complex UI"],
   },
   {
     title: "Design System & Component Library",
     description:
-      "81+ reusable components from scratch: modals, data grids, custom selects, loaders, tooltips, chat UI, form components, icon library, dark mode toggle, route timeline indicators.",
+      "80+ reusable components from scratch: modals, data grids, custom selects, loaders, tooltips, chat UI, form components, icon library, dark mode toggle, route timeline indicators.",
     tags: ["React", "SCSS", "CSS Custom Properties", "Component Architecture"],
+  },
+  {
+    title: "Design System → Cursor Rules",
+    description:
+      "Encoded the entire design language into Cursor rules that generated on-spec UI — adopted across the team. Paired with an Electron app giving product managers one-click local setup, so they could ship UI changes directly from Cursor instead of Figma round-trips.",
+    tags: ["AI-Assisted", "Cursor", "Design Ops", "Electron"],
   },
   {
     title: "Platform-Wide Dark Mode",
     description:
-      "Dark mode across 130+ screens using CSS Custom Properties with theme switching, third-party component theming, and cross-component consistency.",
+      "Dark mode across the entire platform using CSS Custom Properties with theme switching, third-party component theming, and cross-component consistency.",
     tags: ["CSS Custom Properties", "SCSS", "Theming", "React"],
   },
   {
@@ -36,10 +43,31 @@ const projects = [
     tags: ["React", "Jodit", "Complex State", "UI Architecture"],
   },
   {
-    title: "jQuery Removal & Security",
+    title: "jQuery Removal & Security Hardening",
     description:
-      "Removed jQuery across 7 phases (29+ files). Resolved SSTI, NoSQL Injection, Prototype Pollution, CVE-2025-7783.",
+      "Removed jQuery across 7 phases (29+ files). Enforced XSS-safe rendering with DOMPurify across rich-text surfaces; dependency CVE remediation (CVE-2025-7783, CVE-2023-45133) coordinated with backend and devops.",
     tags: ["Refactoring", "Security", "Migration", "Code Quality"],
+  },
+  {
+    title: "Saurav Decor",
+    link: "https://sauravdecor.com",
+    description:
+      "Full-stack business site designed and built end-to-end in TypeScript: Next.js, Prisma, admin dashboard, transactional email. From brand to database, one person.",
+    tags: ["TypeScript", "Next.js", "Prisma", "Design in Code"],
+  },
+  {
+    title: "Esther Perez — Fine-Art Gallery",
+    link: "https://estherperez.com",
+    description:
+      "Custom editorial gallery site for a fine-art photographer: typography-first layout, bespoke framing plugin, art direction to production by one person. Zero templates.",
+    tags: ["Web Design", "Typography", "Editorial", "WordPress"],
+  },
+  {
+    title: "Arcadian Sky — Literary Press Concept",
+    link: "https://arcadian-sky-concept.vercel.app",
+    description:
+      "Homepage concept for a literary brand: starfield, engraved-tree hero, serif typography — calm built structurally, not decoratively.",
+    tags: ["Concept", "Art Direction", "Typography", "Motion"],
   },
 ];
 
@@ -56,7 +84,19 @@ export function Projects() {
             className="group rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 transition-colors hover:border-[var(--color-text-muted)]"
           >
             <h3 className="mb-3 text-lg font-semibold text-[var(--color-text-primary)]">
-              {project.title}
+              {project.link ? (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 transition-colors hover:text-[var(--color-accent)]"
+                >
+                  {project.title}
+                  <ExternalLink className="h-4 w-4 text-[var(--color-text-muted)]" />
+                </a>
+              ) : (
+                project.title
+              )}
             </h3>
             <p className="mb-4 text-sm leading-relaxed text-[var(--color-text-muted)]">
               {project.description}

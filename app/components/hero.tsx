@@ -78,7 +78,7 @@ export function Hero() {
           variants={stagger}
           className="mb-2 text-2xl font-semibold text-[var(--color-text-secondary)] sm:text-3xl"
         >
-          Senior Frontend Engineer
+          Design Engineer
         </motion.p>
 
         <motion.p
@@ -88,7 +88,7 @@ export function Hero() {
           variants={stagger}
           className="mb-3 text-lg text-[var(--color-text-muted)] md:text-xl"
         >
-          I build frontend systems that scale.
+          I design in code — from rough sketch to shipped screen.
         </motion.p>
 
         <motion.p
@@ -98,8 +98,8 @@ export function Hero() {
           variants={stagger}
           className="mb-10 font-mono text-sm text-[var(--color-text-muted)]"
         >
-          React &middot; Design Systems &middot; SCSS Architecture &middot; 9+
-          years
+          React &middot; TypeScript &middot; Design Systems &middot; SCSS
+          &middot; 11 years
         </motion.p>
 
         <motion.div

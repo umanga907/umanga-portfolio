@@ -16,19 +16,19 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://umangashrestha.com.np"),
-  title: "Umanga Deep Shrestha | Senior Frontend Engineer",
+  title: "Umanga Deep Shrestha | Design Engineer",
   description:
-    "Senior Frontend Engineer with 9+ years building production React applications, design systems, and SCSS architecture. Specializing in React.js, TypeScript, and scalable frontend systems.",
+    "Design Engineer — I design in code, from rough sketch to shipped screen. 11 years in frontend: design systems, data-dense product UI, React, TypeScript, Next.js, SCSS.",
   keywords: [
+    "Design Engineer",
     "Senior Frontend Engineer",
     "React Developer",
     "Frontend Developer Nepal",
-    "Freelance React Developer",
     "Design Systems Engineer",
     "TypeScript Developer",
+    "Next.js Developer",
     "SCSS Architecture",
     "React Component Library",
-    "Frontend Consultant",
   ],
   authors: [{ name: "Umanga Deep Shrestha" }],
   creator: "Umanga Deep Shrestha",
@@ -37,15 +37,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://umangashrestha.com.np",
     siteName: "Umanga Deep Shrestha",
-    title: "Umanga Deep Shrestha | Senior Frontend Engineer",
+    title: "Umanga Deep Shrestha | Design Engineer",
     description:
-      "Senior Frontend Engineer with 9+ years building production React applications, design systems, and SCSS architecture.",
+      "Design Engineer — I design in code, from rough sketch to shipped screen. 11 years: design systems, data-dense product UI, React, TypeScript, Next.js.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Umanga Deep Shrestha | Senior Frontend Engineer",
+    title: "Umanga Deep Shrestha | Design Engineer",
     description:
-      "Senior Frontend Engineer with 9+ years building production React applications, design systems, and SCSS architecture.",
+      "Design Engineer — I design in code, from rough sketch to shipped screen. 11 years: design systems, data-dense product UI, React, TypeScript, Next.js.",
   },
   robots: {
     index: true,
@@ -72,7 +72,7 @@ const jsonLd = {
     {
       "@type": "Person",
       name: "Umanga Deep Shrestha",
-      jobTitle: "Senior Frontend Engineer",
+      jobTitle: "Design Engineer",
       url: "https://umangashrestha.com.np",
       sameAs: [
         "https://www.linkedin.com/in/umangadeepshrestha/",
@@ -82,6 +82,7 @@ const jsonLd = {
       knowsAbout: [
         "React.js",
         "TypeScript",
+        "Next.js",
         "JavaScript",
         "SCSS/SASS",
         "CSS Custom Properties",
@@ -92,14 +93,14 @@ const jsonLd = {
         "Dark Mode Theming",
       ],
       description:
-        "Senior Frontend Engineer with 9+ years building production React applications, design systems, and SCSS architecture.",
+        "Design Engineer with 11 years in frontend — design systems, data-dense product UI, React, TypeScript, Next.js, SCSS.",
     },
     {
       "@type": "WebSite",
       name: "Umanga Deep Shrestha",
       url: "https://umangashrestha.com.np",
       description:
-        "Portfolio of Umanga Deep Shrestha, Senior Frontend Engineer specializing in React, TypeScript, and scalable design systems.",
+        "Portfolio of Umanga Deep Shrestha, Design Engineer specializing in React, TypeScript, and scalable design systems.",
     },
   ],
 };
