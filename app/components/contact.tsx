@@ -1,22 +1,38 @@
-import { Github, Linkedin, Mail, ExternalLink } from "lucide-react";
+import {
+  Github,
+  Linkedin,
+  Mail,
+  ExternalLink,
+  MessageCircle,
+} from "lucide-react";
 import {
   SectionWrapper,
   SectionLabel,
   SectionTitle,
 } from "./section-wrapper";
 
+const WHATSAPP_URL =
+  "https://wa.me/9779860959356?text=" +
+  encodeURIComponent("Hi Umanga, I found you through your website.");
+
 const links = [
+  {
+    icon: MessageCircle,
+    label: "WhatsApp",
+    href: WHATSAPP_URL,
+    handle: "Fastest way to reach me",
+  },
+  {
+    icon: Mail,
+    label: "Email",
+    href: "mailto:umanga.907@gmail.com",
+    handle: "umanga.907@gmail.com",
+  },
   {
     icon: Linkedin,
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/umangadeepshrestha/",
     handle: "umangadeepshrestha",
-  },
-  {
-    icon: ExternalLink,
-    label: "Upwork",
-    href: "https://www.upwork.com/freelancers/~umanga907",
-    handle: "Upwork Profile",
   },
   {
     icon: Github,
@@ -25,10 +41,10 @@ const links = [
     handle: "umanga907",
   },
   {
-    icon: Mail,
-    label: "Email",
-    href: "mailto:umanga.907@gmail.com",
-    handle: "umanga.907@gmail.com",
+    icon: ExternalLink,
+    label: "Upwork",
+    href: "https://www.upwork.com/freelancers/~umanga907",
+    handle: "Upwork Profile",
   },
 ];
 
@@ -44,7 +60,7 @@ export function Contact() {
         let&apos;s talk.
       </p>
 
-      <div className="mb-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mb-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
         {links.map((link) => {
           const Icon = link.icon;
           return (
@@ -69,13 +85,24 @@ export function Contact() {
         })}
       </div>
 
-      <a
-        href="mailto:umanga.907@gmail.com"
-        className="inline-flex items-center gap-2 rounded-lg bg-[var(--color-accent)] px-8 py-3.5 text-sm font-medium text-white transition-colors hover:bg-[var(--color-accent-hover)]"
-      >
-        <Mail className="h-4 w-4" />
-        Send me an email
-      </a>
+      <div className="flex flex-wrap gap-4">
+        <a
+          href={WHATSAPP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 rounded-lg bg-[var(--color-accent)] px-8 py-3.5 text-sm font-medium text-white transition-colors hover:bg-[var(--color-accent-hover)]"
+        >
+          <MessageCircle className="h-4 w-4" />
+          Message me on WhatsApp
+        </a>
+        <a
+          href="mailto:umanga.907@gmail.com"
+          className="inline-flex items-center gap-2 rounded-lg border border-[var(--color-border)] px-8 py-3.5 text-sm font-medium text-[var(--color-text-secondary)] transition-colors hover:border-[var(--color-text-muted)] hover:text-[var(--color-text-primary)]"
+        >
+          <Mail className="h-4 w-4" />
+          Send me an email
+        </a>
+      </div>
     </SectionWrapper>
   );
 }
