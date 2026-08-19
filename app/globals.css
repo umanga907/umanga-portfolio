@@ -50,3 +50,46 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-text-muted);
 }
+
+/* Hero entry — pure CSS so the first paint doesn't wait for hydration.
+   The h1 animates position only and is never transparent: it is the LCP
+   element, so it must be visible from the first frame. */
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-rise {
+  from {
+    transform: translateY(14px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.hero-line {
+  opacity: 0;
+  animation: hero-fade-up 0.6s ease-out forwards;
+  animation-delay: calc(var(--hero-i, 0) * 0.12s);
+}
+
+.hero-title {
+  animation: hero-rise 0.6s ease-out both;
+  animation-delay: 0.06s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-line,
+  .hero-title {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -1,11 +1,7 @@
-"use client";
-
-import { motion } from "motion/react";
-
 const codeSnippet = `const DesignSystem = () => {
   const theme = useTheme();
   const components = useRegistry();
-  
+
   return (
     <ThemeProvider mode={theme}>
       <ComponentLibrary
@@ -17,15 +13,9 @@ const codeSnippet = `const DesignSystem = () => {
   );
 };`;
 
-const stagger = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.15, duration: 0.6, ease: "easeOut" as const },
-  }),
-};
-
+// Entry animation is pure CSS (globals.css: .hero-line / .hero-title) so the
+// hero paints before hydration. The h1 is the LCP element — it animates
+// position only and is visible from the first frame.
 export function Hero() {
   return (
     <section
@@ -51,63 +41,42 @@ export function Hero() {
       />
 
       <div className="mx-auto max-w-5xl px-6">
-        <motion.p
-          custom={0}
-          initial="hidden"
-          animate="visible"
-          variants={stagger}
-          className="mb-4 font-mono text-sm text-[var(--color-accent)]"
+        <p
+          className="hero-line mb-4 font-mono text-sm text-[var(--color-accent)]"
+          style={{ "--hero-i": 0 } as React.CSSProperties}
         >
           Hello, I&apos;m
-        </motion.p>
+        </p>
 
-        <motion.h1
-          custom={1}
-          initial="hidden"
-          animate="visible"
-          variants={stagger}
-          className="mb-4 text-5xl font-bold tracking-tight text-[var(--color-text-primary)] sm:text-6xl md:text-7xl"
-        >
+        <h1 className="hero-title mb-4 text-5xl font-bold tracking-tight text-[var(--color-text-primary)] sm:text-6xl md:text-7xl">
           Umanga Deep Shrestha
-        </motion.h1>
+        </h1>
 
-        <motion.p
-          custom={2}
-          initial="hidden"
-          animate="visible"
-          variants={stagger}
-          className="mb-2 text-2xl font-semibold text-[var(--color-text-secondary)] sm:text-3xl"
+        <p
+          className="hero-line mb-2 text-2xl font-semibold text-[var(--color-text-secondary)] sm:text-3xl"
+          style={{ "--hero-i": 2 } as React.CSSProperties}
         >
           Design Engineer
-        </motion.p>
+        </p>
 
-        <motion.p
-          custom={3}
-          initial="hidden"
-          animate="visible"
-          variants={stagger}
-          className="mb-3 text-lg text-[var(--color-text-muted)] md:text-xl"
+        <p
+          className="hero-line mb-3 text-lg text-[var(--color-text-muted)] md:text-xl"
+          style={{ "--hero-i": 3 } as React.CSSProperties}
         >
-          I design in code — from rough sketch to shipped screen.
-        </motion.p>
+          I design in code &mdash; from rough sketch to shipped screen.
+        </p>
 
-        <motion.p
-          custom={4}
-          initial="hidden"
-          animate="visible"
-          variants={stagger}
-          className="mb-10 font-mono text-sm text-[var(--color-text-muted)]"
+        <p
+          className="hero-line mb-10 font-mono text-sm text-[var(--color-text-muted)]"
+          style={{ "--hero-i": 4 } as React.CSSProperties}
         >
           React &middot; TypeScript &middot; Design Systems &middot; SCSS
           &middot; 11 years
-        </motion.p>
+        </p>
 
-        <motion.div
-          custom={5}
-          initial="hidden"
-          animate="visible"
-          variants={stagger}
-          className="flex flex-wrap gap-4"
+        <div
+          className="hero-line flex flex-wrap gap-4"
+          style={{ "--hero-i": 5 } as React.CSSProperties}
         >
           <a
             href="#projects"
@@ -121,7 +90,7 @@ export function Hero() {
           >
             Get In Touch
           </a>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

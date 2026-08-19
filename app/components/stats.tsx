@@ -14,6 +14,8 @@ const stats = [
   { value: 5, suffix: "★", label: "Near-Perfect Reviews" },
 ];
 
+// Server-renders the FINAL value so crawlers and no-JS visitors never see
+// zeros; the count-up only runs once the section scrolls into view.
 function AnimatedCounter({
   target,
   suffix,
@@ -23,11 +25,12 @@ function AnimatedCounter({
   suffix: string;
   inView: boolean;
 }) {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(target);
 
   useEffect(() => {
     if (!inView) return;
 
+    setCount(0);
     let start = 0;
     const duration = 1500;
     const step = Math.ceil(target / (duration / 16));
