@@ -1,4 +1,5 @@
-import { ExternalLink } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
+import Link from "next/link";
 import {
   SectionWrapper,
   SectionLabel,
@@ -8,6 +9,7 @@ import {
 const projects = [
   {
     title: "Logistics TMS Frontend Platform",
+    link: "/work/drayos",
     description:
       "Directed UI/UX of a drayage TMS used by 500+ trucking companies across the U.S. Built and maintained hundreds of operational screens: dispatcher board, load management, billing, driver planner, tracking, reports, email, and more. Top-5 contributor with 2,000+ commits over 6+ years.",
     tags: ["React", "SCSS", "Platform Engineering", "Complex UI"],
@@ -84,7 +86,15 @@ export function Projects() {
             className="group rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 transition-colors hover:border-[var(--color-text-muted)]"
           >
             <h3 className="mb-3 text-lg font-semibold text-[var(--color-text-primary)]">
-              {project.link ? (
+              {project.link?.startsWith("/") ? (
+                <Link
+                  href={project.link}
+                  className="inline-flex items-center gap-2 transition-colors hover:text-[var(--color-accent)]"
+                >
+                  {project.title}
+                  <ArrowRight className="h-4 w-4 text-[var(--color-text-muted)]" />
+                </Link>
+              ) : project.link ? (
                 <a
                   href={project.link}
                   target="_blank"
