@@ -34,7 +34,14 @@ const TONE = {
   enroute: "bg-slate-100 text-slate-700 ring-slate-200",
 } as const;
 
-const RAIL = ["◎", "◌", "▣", "▤", "◍", "◑", "◒", "◓", "◔"];
+import {
+  Sparkles, Route, Map, Monitor, Users, GraduationCap, DollarSign, Globe, Truck, UserCog, Activity, LogOut,
+  Search, Plus, MessageSquare, Bell, Mail, Moon, Settings, ChevronDown, ChevronLeft, ChevronRight,
+  Filter, Columns2, Maximize2, Calendar,
+} from "lucide-react";
+
+const RAIL = [Sparkles, Route, Map, Monitor, Users, GraduationCap, DollarSign, Globe, Truck, UserCog, Activity, LogOut];
+const ICON = "h-[18px] w-[18px]";
 
 export function DispatchBoard() {
   return (
@@ -46,45 +53,54 @@ export function DispatchBoard() {
         {/* rail */}
         <div className="hidden w-12 shrink-0 flex-col items-center gap-5 bg-[#3B6FE8] py-4 text-white/80 sm:flex">
           <span className="mb-2 h-7 w-7 rounded bg-white/90" />
-          {RAIL.map((g, i) => (
-            <span key={i} className={`text-[15px] ${i === 3 ? "rounded-md bg-white/20 px-1.5 py-0.5 text-white" : ""}`}>{g}</span>
+          {RAIL.map((Icon, i) => (
+            <span key={i} className={`flex h-8 w-8 items-center justify-center rounded-md ${i === 3 ? "bg-white/25 text-white" : ""}`}><Icon className={ICON} strokeWidth={1.75} /></span>
           ))}
         </div>
 
         <div className="min-w-0 flex-1 bg-[#F6F7FB]">
           {/* top bar */}
           <div className="flex items-center gap-4 border-b border-slate-200 bg-white px-4 py-2.5">
-            <span className="text-slate-400">⌕</span>
+            <Search className="h-4 w-4 text-slate-400" />
             <span className="flex-1 text-slate-400">Search everything…</span>
-            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500 text-white">+</span>
-            <span className="hidden text-slate-400 sm:inline">◔ ◑ ◒</span>
+            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500 text-white"><Plus className="h-3.5 w-3.5" strokeWidth={2.5} /></span>
+            <span className="hidden items-center gap-3 text-slate-400 sm:flex">
+              <MessageSquare className="h-4 w-4" />
+              <span className="relative"><Bell className="h-4 w-4" /><span className="absolute -right-0.5 -top-0.5 h-1.5 w-1.5 rounded-full bg-red-500" /></span>
+              <span className="relative"><Mail className="h-4 w-4" /><span className="absolute -right-2 -top-1.5 rounded bg-red-500 px-1 text-[9px] font-medium leading-3 text-white">99+</span></span>
+              <Moon className="ml-1 h-4 w-4" />
+              <Settings className="h-4 w-4" />
+            </span>
             <span className="hidden items-center gap-2 sm:flex">
               <span className="h-6 w-6 rounded-full bg-slate-200" />
-              <span className="text-slate-600">Hi, <b>Dispatcher</b></span>
+              <span className="flex items-center gap-1 text-slate-600">Hi, <b>Dispatcher</b> <ChevronDown className="h-3.5 w-3.5 text-slate-400" /></span>
             </span>
           </div>
 
           {/* tabs */}
-          <div className="flex items-center gap-5 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden border-b border-slate-200 bg-white px-4 text-slate-500">
-            {["Dispatcher", "Moves", "Driver itinerary", "Planner", "Dual transactions", "Street turns", "Problem containers", "Trips"].map((t, i) => (
-              <span key={t} className={`whitespace-nowrap py-3 ${i === 0 ? "-mb-px border-b-2 border-[#3B6FE8] font-medium text-slate-900" : ""}`}>
-                {t}
-                {t === "Street turns" && <span className="ml-1.5 rounded-full bg-emerald-500 px-1.5 text-[11px] text-white">23</span>}
-                {t === "Problem containers" && <span className="ml-1.5 rounded-full bg-orange-400 px-1.5 text-[11px] text-white">914</span>}
-              </span>
-            ))}
-            <span className="ml-auto hidden whitespace-nowrap rounded-md bg-emerald-500 px-3 py-1.5 font-medium text-white sm:inline">+ Add new load</span>
+          <div className="flex items-center gap-3 border-b border-slate-200 bg-white pr-3">
+            <div className="flex min-w-0 flex-1 items-center gap-5 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden px-4 text-slate-500">
+              {["Dispatcher", "Moves", "Driver itinerary", "Planner", "Dual transactions", "Street turns", "Problem containers", "Trips"].map((t, i) => (
+                <span key={t} className={`whitespace-nowrap py-3 ${i === 0 ? "-mb-px border-b-2 border-[#3B6FE8] font-medium text-slate-900" : ""}`}>
+                  {t}
+                  {t === "Street turns" && <span className="ml-1.5 rounded-full bg-emerald-500 px-1.5 text-[11px] text-white">23</span>}
+                  {t === "Problem containers" && <span className="ml-1.5 rounded-full bg-orange-400 px-1.5 text-[11px] text-white">914</span>}
+                </span>
+              ))}
+            </div>
+            <span className="hidden shrink-0 items-center gap-1.5 whitespace-nowrap rounded-md bg-emerald-500 px-3 py-1.5 font-medium text-white sm:inline-flex"><Plus className="h-4 w-4" strokeWidth={2.5} /> Add new load</span>
           </div>
 
           <div className="space-y-3 p-3">
             {/* day picker */}
             <div className="flex items-center gap-2">
-              <span className="rounded-md border border-slate-200 bg-white px-2.5 py-1.5">‹</span>
+              <span className="flex h-9 w-9 items-center justify-center rounded-md border border-slate-200 bg-white"><ChevronLeft className="h-4 w-4" /></span>
               <div className="rounded-md px-1">
-                <div className="text-[11px] text-slate-400">Select the day you want to work on</div>
+                <div className="flex items-center gap-1 text-[11px] text-slate-400">Select the day you want to work on <ChevronDown className="h-3 w-3" /></div>
                 <div className="text-base font-semibold text-slate-900">All days</div>
               </div>
-              <span className="rounded-md border border-slate-200 bg-white px-2.5 py-1.5">›</span>
+              <span className="flex h-9 w-9 items-center justify-center rounded-md border border-slate-200 bg-white"><ChevronRight className="h-4 w-4" /></span>
+              <span className="flex h-9 w-9 items-center justify-center rounded-md border border-slate-200 bg-white"><Calendar className="h-4 w-4" /></span>
             </div>
 
             {/* lifecycle cards */}
@@ -94,7 +110,7 @@ export function DispatchBoard() {
                   <div className="flex items-start gap-2">
                     <span className="text-lg font-semibold leading-6 text-slate-900">{c.n}</span>
                     <span className="flex-1 text-[12px] leading-4 text-slate-600">{c.label}</span>
-                    <span className="text-slate-400">›</span>
+                    <ChevronRight className="h-4 w-4 text-slate-400" />
                   </div>
                   <div className="mt-2 grid grid-cols-2 gap-1.5">
                     {c.sub.map(([k, v]) => (
@@ -120,14 +136,14 @@ export function DispatchBoard() {
 
             {/* board toolbar */}
             <div className="flex items-center gap-3 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden rounded-t-lg border border-b-0 border-slate-200 bg-white px-3 py-2">
-              <span className="flex h-7 w-7 items-center justify-center rounded-md bg-emerald-500 text-white">+</span>
-              <span className="text-slate-400">⌕ Search the board…</span>
+              <span className="flex h-7 w-7 items-center justify-center rounded-md bg-emerald-500 text-white"><Plus className="h-4 w-4" strokeWidth={2.5} /></span>
+              <span className="flex items-center gap-2 text-slate-400"><Search className="h-4 w-4" /> Search the board…</span>
               <label className="flex items-center gap-1.5 whitespace-nowrap"><span className="h-3.5 w-3.5 rounded border border-slate-300" />Available <span className="rounded-full bg-slate-100 px-1.5 text-[11px]">418</span></label>
               <label className="flex items-center gap-1.5 whitespace-nowrap"><span className="h-3.5 w-3.5 rounded border border-slate-300" />Pending <span className="rounded-full bg-slate-100 px-1.5 text-[11px]">4806</span></label>
-              <span className="hidden rounded-md border border-slate-200 px-3 py-1 text-slate-400 md:inline">Select tags ▾</span>
-              <span className="ml-auto hidden whitespace-nowrap rounded-md border border-slate-200 px-3 py-1 sm:inline">Filter</span>
-              <span className="hidden rounded-md border border-slate-200 px-2 py-1 sm:inline">▯▯</span>
-              <span className="hidden rounded-md border border-slate-200 px-2 py-1 sm:inline">⤢</span>
+              <span className="hidden items-center gap-6 rounded-md border border-slate-200 px-3 py-1 text-slate-400 md:inline-flex">Select tags <ChevronDown className="h-3.5 w-3.5" /></span>
+              <span className="ml-auto hidden items-center gap-1.5 whitespace-nowrap rounded-md border border-slate-200 px-3 py-1 sm:inline-flex"><Filter className="h-3.5 w-3.5" /> Filter</span>
+              <span className="hidden rounded-md border border-slate-200 p-1.5 sm:inline-flex"><Columns2 className="h-4 w-4" /></span>
+              <span className="hidden rounded-md border border-slate-200 p-1.5 sm:inline-flex"><Maximize2 className="h-4 w-4" /></span>
             </div>
 
             {/* the grid */}
