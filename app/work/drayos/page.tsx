@@ -85,8 +85,8 @@ export default function DrayosCaseStudy() {
         <section className="mt-20">
           <H2 id="start">What I walked into</H2>
           <P>
-            It started on Facebook Messenger, late on a Tuesday night — 2 December 2019, 10:30 PM in Kathmandu. A friend made a
-            group, added me and the CEO of a small logistics startup in the US, and wrote three words: <em>meet our CEO</em>.
+            It started late on a Tuesday night — 2 December 2019, 10:30 PM in Kathmandu. A friend opened a group chat with me
+            and the CEO of a small logistics startup in the US, and wrote three words: <em>meet our CEO</em>.
           </P>
           <P>
             He was direct about it. Their frontend developer had disappeared in the middle of a sprint. The product was a web
