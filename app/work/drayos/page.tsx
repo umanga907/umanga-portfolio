@@ -66,7 +66,7 @@ export default function DrayosCaseStudy() {
         <P>
           DRAYOS is a transportation management system for US drayage — the trucks that move containers between ports, rail yards
           and warehouses. Over 500 carriers run their daily operations on it: dispatch, billing, tracking, driver planning, hundreds of
-          screens. I joined PortPro in December 2019 as the first frontend hire and owned the frontend until March 2026, working
+          screens. I joined PortPro in December 2019, one of its earliest hires, and owned the frontend until March 2026, working
           from Kathmandu, ten hours from the rest of the team.
         </P>
         <P>
@@ -84,8 +84,26 @@ export default function DrayosCaseStudy() {
         {/* ── 1. The start ──────────────────────────────────────── */}
         <section className="mt-20">
           <H2 id="start">What I walked into</H2>
-          {/* TODO: Umanga's own words — the December 2019 origin story. */}
-          <P>[Origin story, in Umanga&apos;s words — coming.]</P>
+          <P>
+            It started on Facebook Messenger, late on a Tuesday night — 2 December 2019, 10:30 PM in Kathmandu. A friend made a
+            group, added me and the CEO of a small logistics startup in the US, and wrote three words: <em>meet our CEO</em>.
+          </P>
+          <P>
+            He was direct about it. Their frontend developer had disappeared in the middle of a sprint. The product was a web
+            dashboard for trucking companies — tables and cards, mostly — and it did not work on smaller screens. They needed
+            someone to make it responsive. I told him I had been doing frontend and UI work for four years and was freelancing
+            part-time on Upwork.
+          </P>
+          <P>
+            What I found when I opened the code was three or four CSS files fighting each other, Bootstrap values overridden in
+            different places with different numbers, and pages that broke when you touched them. The team had been told SCSS was
+            not possible in that codebase. A change the CEO thought should take thirty minutes took a day.
+          </P>
+          <P>
+            The next evening I sent my first update: some of the code cleaned up, alignment and spacing fixed, the cards
+            responsive. He asked if my friend could help me with the rest. That was the whole interview. Six years later I was
+            still on that dashboard.
+          </P>
         </section>
 
         {/* ── 2. Dispatch ───────────────────────────────────────── */}
