@@ -6,8 +6,8 @@ export function Virtualized() {
   return (
     <div className="grid gap-4 md:grid-cols-2">
       {[
-        { title: "Before — render everything", note: "12,000 loads → 12,000 rows in the DOM. Every scroll, filter or edit re-lays out all of them.", live: rows, dim: [] as number[] },
-        { title: "After — render the viewport", note: "12,000 loads → ~30 rows in the DOM, swapped as you scroll. Memoized cells re-render only when their data changes.", live: win, dim: rows.filter((r) => !win.includes(r)) },
+        { title: "Before: render everything", note: "12,000 loads → 12,000 rows in the DOM. Every scroll, filter or edit re-lays out all of them.", live: rows, dim: [] as number[] },
+        { title: "After: render the viewport", note: "12,000 loads → ~30 rows in the DOM, swapped as you scroll. Memoized cells re-render only when their data changes.", live: win, dim: rows.filter((r) => !win.includes(r)) },
       ].map((p) => (
         <div key={p.title} className="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4">
           <div className="mb-1 text-sm font-medium text-[var(--color-text-primary)]">{p.title}</div>

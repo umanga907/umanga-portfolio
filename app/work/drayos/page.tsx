@@ -9,11 +9,11 @@ import { CursorRules } from "./cursor-rules";
 import { Footer } from "../../components/footer";
 
 export const metadata: Metadata = {
-  title: "Six years of DRAYOS — Umanga Deep Shrestha",
+  title: "Six years of DRAYOS | Umanga Deep Shrestha",
   description:
     "A case study: owning the frontend and design system of a US drayage TMS used by 500+ carriers, from a broken 2019 codebase to a platform of hundreds of screens. Built from Kathmandu, ten hours from the team.",
   openGraph: {
-    title: "Six years of DRAYOS — a design engineering case study",
+    title: "Six years of DRAYOS, a design engineering case study",
     description:
       "Design system from scratch, the dispatcher rebuilt, every grid virtualized, and the system encoded into Cursor rules.",
     url: "https://umangashrestha.com.np/work/drayos",
@@ -53,32 +53,32 @@ export default function DrayosCaseStudy() {
 
       <main className="mx-auto max-w-5xl px-6 pb-24 pt-16 md:pt-24">
         {/* ── Intro ─────────────────────────────────────────────── */}
-        <p className="mb-3 font-mono text-xs uppercase tracking-widest text-[var(--color-accent)]">Case study · 2019 – 2026</p>
+        <p className="mb-3 font-mono text-xs uppercase tracking-widest text-[var(--color-accent)]">Case study · 2019 to 2026</p>
         <h1 className="mb-6 max-w-3xl text-4xl font-semibold tracking-tight text-[var(--color-text-primary)] md:text-5xl">
           Six years of DRAYOS
         </h1>
         <P>
-          DRAYOS is a transportation management system for US drayage — the trucks that move containers between ports, rail yards
+          DRAYOS is a transportation management system for US drayage, the trucks that move containers between ports, rail yards
           and warehouses. Over 500 carriers run their daily operations on it: dispatch, billing, tracking, driver planning, hundreds of
           screens. I joined PortPro in December 2019, one of its earliest hires, and owned the frontend until March 2026, working
           from Kathmandu, ten hours from the rest of the team.
         </P>
         <P>
-          This page is what that looked like. The screens are rebuilt for this site with placeholder data — the product belongs to
-          PortPro — but the layouts, the decisions and the numbers are the real ones.
+          This page is what that looked like. The screens are rebuilt for this site with placeholder data, because the product belongs to
+          PortPro, but the layouts, the decisions and the numbers are the real ones.
         </P>
 
         {/* ── 1. The start ──────────────────────────────────────── */}
         <section className="mt-20">
           <H2 id="start">What I walked into</H2>
           <P>
-            It started late on a Tuesday night — 2 December 2019, 10:30 PM in Kathmandu. A friend opened a group chat with me
+            It started late on a Tuesday night, 2 December 2019, 10:30 PM in Kathmandu. A friend opened a group chat with me
             and the CEO of a small logistics startup in the US, and wrote three words: <em>meet our CEO</em>.
           </P>
           <P>
             He was direct. Their frontend developer had disappeared in the middle of a sprint. A new design was supposed to go
             live that day. Three new customers were being onboarded that week. The product was a web dashboard for trucking
-            companies — tables and cards, mostly — and it did not work on smaller screens. Could I make the whole thing
+            companies, tables and cards mostly, and it did not work on smaller screens. Could I make the whole thing
             responsive? I said yes. I was four years into frontend and UI work, freelancing part-time on Upwork. My
             sister&apos;s wedding was that Thursday.
           </P>
@@ -86,12 +86,12 @@ export default function DrayosCaseStudy() {
             An hour later I had cloned the repo, and he was asking whether I could give him something to deploy by the next
             morning. <em>Maybe get some less sleep.</em> The code was what he was afraid of: CSS overwritten in so many places
             that nothing could be debugged, a SCSS compiler that did not run, and a dispatcher table so wide that the only honest
-            answer was a horizontal scroll — too much data. I did the cards first: alignment, spacing, font sizes, responsive.
+            answer was a horizontal scroll. Too much data. I did the cards first: alignment, spacing, font sizes, responsive.
             He reviewed over screen-share at one in the morning, my time.
           </P>
           <P>
             My first changes went live on 4 December, about thirty-eight hours after that first message. The plan I wrote on
-            night one — convert the CSS to SCSS, get the compiler working, then clean the code properly — took until July 2020
+            night one, convert the CSS to SCSS, get the compiler working, then clean the code properly, took until July 2020
             to finish, because customers came first. Six years later I was still on that dashboard.
           </P>
         </section>
@@ -102,14 +102,14 @@ export default function DrayosCaseStudy() {
           <P>
             Dispatchers spend their whole day on one screen, moving containers through a lifecycle: arriving, to be picked up, to
             be delivered, to be returned, dropped. The original board showed counts in a row of tiles and a paginated table
-            underneath. Every question — what needs a driver right now, what is stuck at the terminal — meant scrolling and filtering by hand.
+            underneath. Every question, what needs a driver right now, what is stuck at the terminal, meant scrolling and filtering by hand.
           </P>
           <div className="my-8">
             <Dispatch2020 />
             <Caption>2020. Rebuilt for this page from a reference screenshot; placeholder data.</Caption>
           </div>
           <P>
-            The redesign made the lifecycle the interface. Six cards along the top summarise each stage and act as filters — click
+            The redesign made the lifecycle the interface. Six cards along the top summarise each stage and act as filters. Click
             <em> Containers need to be returned</em> and the board below becomes that list. The grid got denser so a dispatcher sees
             more at once, cells carry their own controls (inline editing, dropdowns, popups), a load can be created directly in the
             grid, and the whole board goes full-screen. Getting that much interactive UI into one view without overlap and collision
@@ -125,10 +125,10 @@ export default function DrayosCaseStudy() {
         <section className="mt-20">
           <H2 id="system">The design system</H2>
           <P>
-            The SCSS foundation went in on 14 July 2020 — the plan from the first night, seven months late because customers came
-            first — and from that day every style change went through it. Built from there in SCSS and React and maintained for
-            six years: a shared component library — modals, data grids, custom
-            selects, a date-time picker, form controls, tooltips, loaders, a chat UI, an icon set, route timeline indicators — with theming on CSS custom
+            The SCSS foundation went in on 14 July 2020, the plan from the first night, seven months late because customers came
+            first. From that day every style change went through it. Built from there in SCSS and React and maintained for
+            six years: a shared component library (modals, data grids, custom
+            selects, a date-time picker, form controls, tooltips, loaders, a chat UI, an icon set, route timeline indicators) with theming on CSS custom
             properties and a platform-wide dark mode. It replaced a copy-the-last-page workflow where developers reused stale
             markup and the UI drifted a little further with every new screen.
           </P>
@@ -160,12 +160,33 @@ export default function DrayosCaseStudy() {
           <H2 id="cursor">The design system, as rules</H2>
           <P>
             By 2025 I was the bottleneck: every frontend implementation came to me for review, then I re-tested the pages. So I
-            encoded the design system into Cursor rules — which components to use, the spacing and layout defaults, how a screen
-            is scaffolded from the backend&apos;s API JSON — so a developer with no UI background could generate on-standard UI from
+            encoded the design system into Cursor rules: which components to use, the spacing and layout defaults, how a screen
+            is scaffolded from the backend&apos;s API JSON. A developer with no UI background could generate on-standard UI from
             a single prompt. A small Electron app did the local setup (GitHub auth, keys, clone) so product managers could open the
             codebase in Cursor and make UI changes without pulling in an engineer.
           </P>
           <div className="my-8"><CursorRules /><Caption>A representative prompt and the kind of screen it produced. Rules and screen redrawn for this page; the real rules file and codebase belong to PortPro.</Caption></div>
+        </section>
+
+        {/* ── 6. The rest ───────────────────────────────────────── */}
+        <section className="mt-20">
+          <H2 id="also">Also on DRAYOS</H2>
+          <P>
+            The sections above are the parts with a story. These were built in the same six years and are part of the same
+            frontend; they are listed here so the page is a complete record.
+          </P>
+          <dl className="mt-6 divide-y divide-[var(--color-border)] border-y border-[var(--color-border)]">
+            {[
+              ["Embedded email client", "A full email UI inside the product: grid and card views, a composer with a rich text editor, tags and labels, mailbox settings, context menus, collapsible recipients."],
+              ["AI Hub and AI Workbench", "AI chat, a workbench, agents, a control tower with document validation, a drag-and-drop dashboard builder, and SOP confirmation workflows. Built from scratch on the same component system."],
+              ["jQuery removal and security hardening", "jQuery removed across seven phases and 29+ files. XSS-safe rendering with DOMPurify across every rich-text surface. Dependency CVE remediation (CVE-2025-7783, CVE-2023-45133) coordinated with backend and devops."],
+            ].map(([t, d]) => (
+              <div key={t} className="grid gap-2 py-5 md:grid-cols-[220px_1fr] md:gap-8">
+                <dt className="text-sm font-medium text-[var(--color-text-primary)]">{t}</dt>
+                <dd className="text-sm leading-7 text-[var(--color-text-secondary)]">{d}</dd>
+              </div>
+            ))}
+          </dl>
         </section>
 
         {/* ── Close ─────────────────────────────────────────────── */}

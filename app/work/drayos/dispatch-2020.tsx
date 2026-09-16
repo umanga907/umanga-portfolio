@@ -23,15 +23,15 @@ const TILES = [
 type Row = { n: number; status: string; sub: string; ready?: boolean; load: string; lfd: string; cut: string; apt?: string; customer: string; container: string; chassis: string; size: string };
 
 const ROWS: Row[] = [
-  { n: 13, status: "DROPPED", sub: "HARBOR YARD – Loaded", load: "M018901", lfd: "11/24", cut: "11/27", customer: "THE HEMISPHERE", container: "MRKU7527698", chassis: "5817", size: "40" },
-  { n: 14, status: "DROPPED", sub: "WAYNE TILE IMPORT – Loaded", load: "M018900", lfd: "11/24", cut: "11/27", apt: "11/27 18:45", customer: "INTERGLOBO NORT", container: "SEGU1937854", chassis: "TSXZ251717", size: "20" },
-  { n: 15, status: "DROPPED", sub: "NORTHSTAR TRUCKING – Loaded", ready: true, load: "M018889", lfd: "11/26", cut: "11/27", apt: "11/27 18:45", customer: "Noatum Logistic", container: "ECMU9813950", chassis: "58475", size: "40" },
-  { n: 16, status: "DROPPED", sub: "NORTHSTAR TRUCKING – Loaded", ready: true, load: "M018888", lfd: "11/24", cut: "11/27", apt: "11/27 18:45", customer: "Noatum Logistic", container: "CMAU6957330", chassis: "58475", size: "40" },
-  { n: 17, status: "DROPPED", sub: "HARBOR YARD – Loaded", load: "M018886", lfd: "11/24", cut: "11/27", apt: "11/27 18:45", customer: "Noatum Logistic", container: "APHU7015890", chassis: "58479", size: "40" },
-  { n: 18, status: "DROPPED", sub: "HARBOR YARD – Loaded", load: "M018814", lfd: "11/22", cut: "11/27", customer: "EAST COAST DRIE", container: "TEMU2764474", chassis: "58458", size: "40" },
-  { n: 19, status: "DROPPED", sub: "HARBOR YARD – Loaded", ready: true, load: "M018797", lfd: "11/23", cut: "11/27", apt: "11/22 22:45", customer: "MENROSE USA (B", container: "YMMU4012769", chassis: "58479", size: "40" },
-  { n: 20, status: "DROPPED", sub: "HARBOR YARD – Loaded", load: "M018714", lfd: "11/22", cut: "11/27", apt: "11/19 21:45", customer: "FASHION DISTRIB", container: "OOLU2905269", chassis: "58826", size: "40" },
-  { n: 21, status: "DROPPED", sub: "WAYNE TILE IMPORT – Loaded", load: "M018702", lfd: "11/21", cut: "11/26", apt: "11/19 21:45", customer: "INTERGLOBO NORT", container: "TCLU5527180", chassis: "58831", size: "40" },
+  { n: 13, status: "DROPPED", sub: "HARBOR YARD - Loaded", load: "M018901", lfd: "11/24", cut: "11/27", customer: "THE HEMISPHERE", container: "MRKU7527698", chassis: "5817", size: "40" },
+  { n: 14, status: "DROPPED", sub: "WAYNE TILE IMPORT - Loaded", load: "M018900", lfd: "11/24", cut: "11/27", apt: "11/27 18:45", customer: "INTERGLOBO NORT", container: "SEGU1937854", chassis: "TSXZ251717", size: "20" },
+  { n: 15, status: "DROPPED", sub: "NORTHSTAR TRUCKING - Loaded", ready: true, load: "M018889", lfd: "11/26", cut: "11/27", apt: "11/27 18:45", customer: "Noatum Logistic", container: "ECMU9813950", chassis: "58475", size: "40" },
+  { n: 16, status: "DROPPED", sub: "NORTHSTAR TRUCKING - Loaded", ready: true, load: "M018888", lfd: "11/24", cut: "11/27", apt: "11/27 18:45", customer: "Noatum Logistic", container: "CMAU6957330", chassis: "58475", size: "40" },
+  { n: 17, status: "DROPPED", sub: "HARBOR YARD - Loaded", load: "M018886", lfd: "11/24", cut: "11/27", apt: "11/27 18:45", customer: "Noatum Logistic", container: "APHU7015890", chassis: "58479", size: "40" },
+  { n: 18, status: "DROPPED", sub: "HARBOR YARD - Loaded", load: "M018814", lfd: "11/22", cut: "11/27", customer: "EAST COAST DRIE", container: "TEMU2764474", chassis: "58458", size: "40" },
+  { n: 19, status: "DROPPED", sub: "HARBOR YARD - Loaded", ready: true, load: "M018797", lfd: "11/23", cut: "11/27", apt: "11/22 22:45", customer: "MENROSE USA (B", container: "YMMU4012769", chassis: "58479", size: "40" },
+  { n: 20, status: "DROPPED", sub: "HARBOR YARD - Loaded", load: "M018714", lfd: "11/22", cut: "11/27", apt: "11/19 21:45", customer: "FASHION DISTRIB", container: "OOLU2905269", chassis: "58826", size: "40" },
+  { n: 21, status: "DROPPED", sub: "WAYNE TILE IMPORT - Loaded", load: "M018702", lfd: "11/21", cut: "11/26", apt: "11/19 21:45", customer: "INTERGLOBO NORT", container: "TCLU5527180", chassis: "58831", size: "40" },
 ];
 
 const BLUE = "#3B82F6";

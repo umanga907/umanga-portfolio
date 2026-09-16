@@ -8,47 +8,25 @@ import {
 
 const projects = [
   {
-    title: "Logistics TMS Frontend Platform",
+    title: "Six years of DRAYOS",
     link: "/work/drayos",
     description:
-      "Directed UI/UX of a drayage TMS used by 500+ trucking companies across the U.S. Built and maintained hundreds of operational screens: dispatcher board, load management, billing, driver planner, tracking, reports, email, and more. Top-5 contributor with 2,000+ commits over 6+ years.",
-    tags: ["React", "SCSS", "Platform Engineering", "Complex UI"],
+      "Owned the frontend of a drayage TMS used by over 500 trucking companies, from a broken pile of CSS in 2019 to a component system with dark mode, virtualized grids and the design system encoded into Cursor rules. The case study rebuilds the dispatch board then and now, and lists the rest: an embedded email client, an AI workbench, the jQuery removal and security hardening.",
+    tags: ["React", "SCSS", "Design System", "Cursor Rules"],
   },
   {
-    title: "Design System & Component Library",
+    title: "Interactive API docs concept",
+    link: "https://searchapi-interactive-docs-beta.vercel.app/",
     description:
-      "80+ reusable components from scratch: modals, data grids, custom selects, loaders, tooltips, chat UI, form components, icon library, dark mode toggle, route timeline indicators.",
-    tags: ["React", "SCSS", "CSS Custom Properties", "Component Architecture"],
+      "An API's documentation page rebuilt so it holds one live request: build it while you read, run it in place, explore the response as a tree with copyable paths. Generated from the OpenAPI spec, light and dark from one token set, every text pairing measured at AA. Stimulus and Tailwind.",
+    tags: ["Stimulus", "Tailwind", "OpenAPI", "Accessibility"],
   },
   {
-    title: "Design System → Cursor Rules",
+    title: "Tailwind style guide",
+    link: "https://umanga907.github.io/tailwind-style-guide-sample/",
     description:
-      "Encoded the entire design language into Cursor rules that generated on-spec UI — adopted across the team. Paired with an Electron app giving product managers one-click local setup, so they could ship UI changes directly from Cursor instead of Figma round-trips.",
-    tags: ["AI-Assisted", "Cursor", "Design Ops", "Electron"],
-  },
-  {
-    title: "Platform-Wide Dark Mode",
-    description:
-      "Dark mode across the entire platform using CSS Custom Properties with theme switching, third-party component theming, and cross-component consistency.",
-    tags: ["CSS Custom Properties", "SCSS", "Theming", "React"],
-  },
-  {
-    title: "AI Hub & AI Workbench",
-    description:
-      "Built from scratch: AI Chat, AI Workbench, AI Agents, AI Control Tower with Document Validation, dashboard builder with drag-and-drop, SOP confirmation workflows.",
-    tags: ["React", "Complex UI", "Chat Interface", "Drag & Drop"],
-  },
-  {
-    title: "Embedded Email System",
-    description:
-      "Full email client UI: grid/card views, composer with rich text editor, tags/labels, mailbox settings, context menus, collapsible recipients.",
-    tags: ["React", "Jodit", "Complex State", "UI Architecture"],
-  },
-  {
-    title: "jQuery Removal & Security Hardening",
-    description:
-      "Removed jQuery across 7 phases (29+ files). Enforced XSS-safe rendering with DOMPurify across rich-text surfaces; dependency CVE remediation (CVE-2025-7783, CVE-2023-45133) coordinated with backend and devops.",
-    tags: ["Refactoring", "Security", "Migration", "Code Quality"],
+      "A design system documented the way engineers use one: tokens defined once in the Tailwind config, every component in every state including error, disabled and loading, copyable markup under each.",
+    tags: ["Tailwind", "Design System", "Documentation"],
   },
   {
     title: "Saurav Decor",
@@ -58,17 +36,17 @@ const projects = [
     tags: ["TypeScript", "Next.js", "Prisma", "Design in Code"],
   },
   {
-    title: "Esther Perez — Fine-Art Gallery",
+    title: "Esther Perez, fine-art gallery",
     link: "https://estherperez.com",
     description:
       "Custom editorial gallery site for a fine-art photographer: typography-first layout, bespoke framing plugin, art direction to production by one person. Zero templates.",
     tags: ["Web Design", "Typography", "Editorial", "WordPress"],
   },
   {
-    title: "Arcadian Sky — Literary Press Concept",
+    title: "Arcadian Sky, literary press concept",
     link: "https://arcadian-sky-concept.vercel.app",
     description:
-      "Homepage concept for a literary brand: starfield, engraved-tree hero, serif typography — calm built structurally, not decoratively.",
+      "Homepage concept for a literary brand: starfield, engraved-tree hero, serif typography. Calm built structurally, not decoratively.",
     tags: ["Concept", "Art Direction", "Typography", "Motion"],
   },
 ];
