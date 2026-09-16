@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { DispatchBoard } from "./dispatch-board";
 import { Dispatch2020 } from "./dispatch-2020";
+import { ComponentSheet } from "./component-sheet";
 import { Footer } from "../../components/footer";
 
 export const metadata: Metadata = {
@@ -138,14 +139,22 @@ export default function DrayosCaseStudy() {
         <section className="mt-20">
           <H2 id="system">The design system</H2>
           <P>
-            Built from scratch in SCSS and React and maintained for six years: 80+ shared components — modals, data grids, custom
+            The SCSS foundation went in on 14 July 2020 — the plan from the first night, seven months late because customers came
+            first — and from that day every style change went through it. Built from there in SCSS and React and maintained for
+            six years: 80+ shared components — modals, data grids, custom
             selects, form controls, tooltips, loaders, a chat UI, an icon set, route timeline indicators — with theming on CSS custom
             properties and a platform-wide dark mode. It replaced a copy-the-last-page workflow where developers reused stale
             markup and the UI drifted a little further with every new screen.
           </P>
-          {/* TODO: component sheet, light and dark, recreated. */}
-          <div className="my-8 rounded-xl border border-dashed border-[var(--color-border)] p-10 text-center font-mono text-xs text-[var(--color-text-muted)]">
-            component sheet — in progress
+          <div className="my-8 space-y-6">
+            <div>
+              <ComponentSheet theme="light" />
+              <Caption>A sample of the system, redrawn for this page. Light theme.</Caption>
+            </div>
+            <div>
+              <ComponentSheet theme="dark" />
+              <Caption>The same components on the dark tokens. The hazmat / hot / overweight row colours are the real values; in dark they move to the row edge so the text stays readable.</Caption>
+            </div>
           </div>
         </section>
 
