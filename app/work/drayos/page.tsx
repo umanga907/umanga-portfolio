@@ -92,7 +92,7 @@ export default function DrayosCaseStudy() {
             He was direct. Their frontend developer had disappeared in the middle of a sprint. A new design was supposed to go
             live that day. Three new customers were being onboarded that week. The product was a web dashboard for trucking
             companies — tables and cards, mostly — and it did not work on smaller screens. Could I make the whole thing
-            responsive? I said yes. I was 26, four years into frontend and UI work, freelancing part-time on Upwork. My
+            responsive? I said yes. I was four years into frontend and UI work, freelancing part-time on Upwork. My
             sister&apos;s wedding was that Thursday.
           </P>
           <P>
