@@ -4,6 +4,8 @@ import { ArrowLeft } from "lucide-react";
 import { DispatchBoard } from "./dispatch-board";
 import { Dispatch2020 } from "./dispatch-2020";
 import { ComponentSheet } from "./component-sheet";
+import { Virtualized } from "./virtualized";
+import { CursorRules } from "./cursor-rules";
 import { Footer } from "../../components/footer";
 
 export const metadata: Metadata = {
@@ -166,6 +168,7 @@ export default function DrayosCaseStudy() {
             lag exactly when dispatchers needed them most. I virtualized every data grid in the product, not just dispatch, and
             added memoization across the heaviest operational screens, so thousands of rows render and scroll without lag.
           </P>
+          <div className="my-8"><Virtualized /><Caption>Illustration, not a benchmark: the change is in how many rows exist at once, not how many the user can reach.</Caption></div>
         </section>
 
         {/* ── 5. Cursor rules ───────────────────────────────────── */}
@@ -178,7 +181,7 @@ export default function DrayosCaseStudy() {
             a single prompt. A small Electron app did the local setup (GitHub auth, keys, clone) so product managers could open the
             codebase in Cursor and make UI changes without pulling in an engineer.
           </P>
-          {/* TODO: a prompt beside the screen it produced. */}
+          <div className="my-8"><CursorRules /><Caption>A representative prompt and the kind of screen it produced. Rules and screen redrawn for this page; the real rules file and codebase belong to PortPro.</Caption></div>
         </section>
 
         {/* ── Close ─────────────────────────────────────────────── */}
@@ -189,9 +192,7 @@ export default function DrayosCaseStudy() {
           </P>
           <div className="mt-6 flex flex-wrap gap-3 text-sm">
             <Link href="/#contact" className="rounded-lg bg-[var(--color-accent)] px-4 py-2 font-medium text-white transition-colors hover:bg-[var(--color-accent-hover)]">Get in touch</Link>
-            <a href="https://searchapi-interactive-docs-beta.vercel.app/" target="_blank" rel="noopener noreferrer" className="rounded-lg border border-[var(--color-border)] px-4 py-2 text-[var(--color-text-secondary)] transition-colors hover:border-[var(--color-text-muted)] hover:text-[var(--color-text-primary)]">
-              Latest work: interactive API docs →
-            </a>
+            <Link href="/#projects" className="rounded-lg border border-[var(--color-border)] px-4 py-2 text-[var(--color-text-secondary)] transition-colors hover:border-[var(--color-text-muted)] hover:text-[var(--color-text-primary)]">More work →</Link>
           </div>
         </section>
       </main>
