@@ -36,15 +36,6 @@ function Caption({ children }: { children: React.ReactNode }) {
   return <p className="mt-3 font-mono text-xs text-[var(--color-text-muted)]">{children}</p>;
 }
 
-function Fact({ n, label }: { n: string; label: string }) {
-  return (
-    <div className="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-4">
-      <div className="text-2xl font-semibold text-[var(--color-text-primary)]">{n}</div>
-      <div className="mt-1 text-xs text-[var(--color-text-muted)]">{label}</div>
-    </div>
-  );
-}
-
 export default function DrayosCaseStudy() {
   return (
     <>
@@ -76,13 +67,6 @@ export default function DrayosCaseStudy() {
           This page is what that looked like. The screens are rebuilt for this site with placeholder data — the product belongs to
           PortPro — but the layouts, the decisions and the numbers are the real ones.
         </P>
-
-        <div className="my-10 grid grid-cols-2 gap-3 md:grid-cols-4">
-          <Fact n="500+" label="carriers running on it" />
-          <Fact n="80+" label="components in the design system" />
-          <Fact n="6 yrs" label="owning the frontend, async" />
-          <Fact n="2,000+" label="commits, top-5 contributor" />
-        </div>
 
         {/* ── 1. The start ──────────────────────────────────────── */}
         <section className="mt-20">
@@ -143,8 +127,8 @@ export default function DrayosCaseStudy() {
           <P>
             The SCSS foundation went in on 14 July 2020 — the plan from the first night, seven months late because customers came
             first — and from that day every style change went through it. Built from there in SCSS and React and maintained for
-            six years: 80+ shared components — modals, data grids, custom
-            selects, form controls, tooltips, loaders, a chat UI, an icon set, route timeline indicators — with theming on CSS custom
+            six years: a shared component library — modals, data grids, custom
+            selects, a date-time picker, form controls, tooltips, loaders, a chat UI, an icon set, route timeline indicators — with theming on CSS custom
             properties and a platform-wide dark mode. It replaced a copy-the-last-page workflow where developers reused stale
             markup and the UI drifted a little further with every new screen.
           </P>
