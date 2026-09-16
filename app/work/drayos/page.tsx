@@ -89,20 +89,23 @@ export default function DrayosCaseStudy() {
             and the CEO of a small logistics startup in the US, and wrote three words: <em>meet our CEO</em>.
           </P>
           <P>
-            He was direct about it. Their frontend developer had disappeared in the middle of a sprint. The product was a web
-            dashboard for trucking companies — tables and cards, mostly — and it did not work on smaller screens. They needed
-            someone to make it responsive. I told him I had been doing frontend and UI work for four years and was freelancing
-            part-time on Upwork.
+            He was direct. Their frontend developer had disappeared in the middle of a sprint. A new design was supposed to go
+            live that day. Three new customers were being onboarded that week. The product was a web dashboard for trucking
+            companies — tables and cards, mostly — and it did not work on smaller screens. Could I make the whole thing
+            responsive? I said yes. I was 26, four years into frontend and UI work, freelancing part-time on Upwork. My
+            sister&apos;s wedding was that Thursday.
           </P>
           <P>
-            What I found when I opened the code was three or four CSS files fighting each other, Bootstrap values overridden in
-            different places with different numbers, and pages that broke when you touched them. The team had been told SCSS was
-            not possible in that codebase. A change the CEO thought should take thirty minutes took a day.
+            An hour later I had cloned the repo, and he was asking whether I could give him something to deploy by the next
+            morning. <em>Maybe get some less sleep.</em> The code was what he was afraid of: CSS overwritten in so many places
+            that nothing could be debugged, a SCSS compiler that did not run, and a dispatcher table so wide that the only honest
+            answer was a horizontal scroll — too much data. I did the cards first: alignment, spacing, font sizes, responsive.
+            He reviewed over screen-share at one in the morning, my time.
           </P>
           <P>
-            The next evening I sent my first update: some of the code cleaned up, alignment and spacing fixed, the cards
-            responsive. He asked if my friend could help me with the rest. That was the whole interview. Six years later I was
-            still on that dashboard.
+            My first changes went live on 4 December, about thirty-eight hours after that first message. The plan I wrote on
+            night one — convert the CSS to SCSS, get the compiler working, then clean the code properly — took until July 2020
+            to finish, because customers came first. Six years later I was still on that dashboard.
           </P>
         </section>
 
