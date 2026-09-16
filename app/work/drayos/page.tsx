@@ -176,7 +176,9 @@ export default function DrayosCaseStudy() {
           </P>
           <div className="mt-6 flex flex-wrap gap-3 text-sm">
             <Link href="/#contact" className="rounded-lg bg-[var(--color-accent)] px-4 py-2 font-medium text-white transition-colors hover:bg-[var(--color-accent-hover)]">Get in touch</Link>
-            <Link href="/#projects" className="rounded-lg border border-[var(--color-border)] px-4 py-2 text-[var(--color-text-secondary)] transition-colors hover:border-[var(--color-text-muted)] hover:text-[var(--color-text-primary)]">More work →</Link>
+            <a href="https://searchapi-interactive-docs-beta.vercel.app/" target="_blank" rel="noopener noreferrer" className="rounded-lg border border-[var(--color-border)] px-4 py-2 text-[var(--color-text-secondary)] transition-colors hover:border-[var(--color-text-muted)] hover:text-[var(--color-text-primary)]">
+              Latest work: interactive API docs →
+            </a>
           </div>
         </section>
       </main>
