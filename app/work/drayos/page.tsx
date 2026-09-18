@@ -177,7 +177,7 @@ export default function DrayosCaseStudy() {
           </P>
           <dl className="mt-6 divide-y divide-[var(--color-border)] border-y border-[var(--color-border)]">
             {[
-              ["Embedded email client", "A full email UI inside the product: grid and card views, a composer with a rich text editor, tags and labels, mailbox settings, context menus, collapsible recipients."],
+              ["Embedded email client", "The whole email experience inside the TMS, UX and code: grid and card views, a composer with a rich text editor, threaded conversations with reply, reply all and forward, collapsed messages and trimmed quoted text, right-click context menus, labels and a status on every thread, and a side panel that links a conversation to the load, invoice, dispute or quote it belongs to, with an AI summary on top. Incoming HTML is cleaned on the frontend and rendered inside a Shadow DOM, so a customer's email styles and scripts never touch the app."],
               ["AI Hub and AI Workbench", "AI chat, a workbench, agents, a control tower with document validation, a drag-and-drop dashboard builder, and SOP confirmation workflows. Built from scratch on the same component system."],
               ["jQuery removal and security hardening", "jQuery removed across seven phases and 29+ files. XSS-safe rendering with DOMPurify across every rich-text surface. Dependency CVE remediation (CVE-2025-7783, CVE-2023-45133) coordinated with backend and devops."],
             ].map(([t, d]) => (
