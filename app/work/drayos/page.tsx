@@ -172,13 +172,14 @@ export default function DrayosCaseStudy() {
         <section className="mt-20">
           <H2 id="also">Also on DRAYOS</H2>
           <P>
-            The sections above are the parts with a story. These were built in the same six years and are part of the same
-            frontend; they are listed here so the page is a complete record.
+            The sections above are the parts with a story. These were built in the same six years, as team work with a product
+            designer in Figma and engineers across the stack; my part was the UX and the frontend. They are listed here so the
+            page is a complete record.
           </P>
           <dl className="mt-6 divide-y divide-[var(--color-border)] border-y border-[var(--color-border)]">
             {[
-              ["Embedded email client", "The whole email experience inside the TMS, UX and code: grid and card views, a composer with a rich text editor, threaded conversations with reply, reply all and forward, collapsed messages and trimmed quoted text, right-click context menus, labels and a status on every thread, and a side panel that links a conversation to the load, invoice, dispute or quote it belongs to, with an AI summary on top. Incoming HTML is cleaned on the frontend and rendered inside a Shadow DOM, so a customer's email styles and scripts never touch the app."],
-              ["AI Command", "A Slack-like workspace inside the TMS: channels, direct messages and AI agents side by side. Agents for ETA updates, empty returns, delivery orders and document validation post into channels, relay driver replies from SMS, and file tasks that link back to the load. A channel task panel with verify, action and patch queues, message translation, an agent hub, a drag-and-drop dashboard builder and SOP confirmation workflows. On this one I designed the UI and the UX; the team built it."],
+              ["Embedded email client", "The email experience inside the TMS: grid and card views, a composer with a rich text editor, threaded conversations with reply, reply all and forward, collapsed messages and trimmed quoted text, right-click context menus, labels and a status on every thread, and a side panel that links a conversation to the load, invoice, dispute or quote it belongs to, with an AI summary on top. Incoming HTML is cleaned on the frontend and rendered inside a Shadow DOM, so a customer's email styles and scripts never touch the app."],
+              ["AI Command", "A Slack-like workspace inside the TMS: channels, direct messages and AI agents side by side. Agents for ETA updates, empty returns, delivery orders and document validation post into channels, relay driver replies from SMS, and file tasks that link back to the load. A channel task panel with verify, action and patch queues, message translation, an agent hub, a drag-and-drop dashboard builder and SOP confirmation workflows."],
               ["jQuery removal and security hardening", "jQuery removed across seven phases and 29+ files. XSS-safe rendering with DOMPurify across every rich-text surface. Dependency CVE remediation (CVE-2025-7783, CVE-2023-45133) coordinated with backend and devops."],
             ].map(([t, d]) => (
               <div key={t} className="grid gap-2 py-5 md:grid-cols-[220px_1fr] md:gap-8">
