@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   SectionWrapper,
   SectionLabel,
@@ -39,6 +40,14 @@ export function About() {
         </div>
 
         <div>
+          <Image
+            src="/umanga.jpg"
+            alt="Umanga Deep Shrestha"
+            width={560}
+            height={560}
+            sizes="176px"
+            className="mb-8 h-44 w-44 rounded-2xl border border-[var(--color-border)] object-cover"
+          />
           <h3 className="mb-4 font-mono text-xs uppercase tracking-widest text-[var(--color-text-muted)]">Experience</h3>
           <ul className="divide-y divide-[var(--color-border)] border-y border-[var(--color-border)]">
             {roles.map((r) => (
