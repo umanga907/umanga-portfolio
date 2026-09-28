@@ -47,7 +47,7 @@ export function Hero() {
             umanga.907@gmail.com
           </a>
           <span className="inline-flex items-center gap-2 text-sm text-[var(--color-text-muted)]">
-            <span className="h-2 w-2 rounded-full bg-emerald-400" aria-hidden="true" />
+            <span className="h-2 w-2 rounded-full bg-emerald-500" aria-hidden="true" />
             Open to remote roles
           </span>
         </div>

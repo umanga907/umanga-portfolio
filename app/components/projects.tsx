@@ -149,12 +149,12 @@ function Preview({ children }: { children: React.ReactNode }) {
   return (
     <div
       aria-hidden
-      className="pointer-events-none relative overflow-hidden border-b border-[var(--color-border)] bg-[var(--color-background)] px-6 pb-6 pt-6 sm:h-[300px] sm:pb-0 md:h-[380px] md:px-10 md:pt-10"
+      className="pointer-events-none relative overflow-hidden border-b border-[var(--color-border)] bg-[var(--color-inset)] px-6 pb-6 pt-6 sm:h-[300px] sm:pb-0 md:h-[380px] md:px-10 md:pt-10"
     >
       <div className="transition-transform duration-500 ease-out group-hover:-translate-y-2">
         {children}
       </div>
-      <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-[var(--color-background)] to-transparent sm:h-24" />
+      <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-[var(--color-inset)] to-transparent sm:h-24" />
     </div>
   );
 }
@@ -182,7 +182,7 @@ function Featured({ project, preview }: { project: Project; preview: React.React
 
 function Thumb({ src, title }: { src: string; title: string }) {
   return (
-    <div className="relative aspect-[16/10] overflow-hidden border-b border-[var(--color-border)] bg-[var(--color-background)]">
+    <div className="relative aspect-[16/10] overflow-hidden border-b border-[var(--color-border)] bg-[var(--color-inset)]">
       <Image
         src={src}
         alt={`${title}, home page`}

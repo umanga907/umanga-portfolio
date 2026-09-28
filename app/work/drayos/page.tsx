@@ -7,6 +7,7 @@ import { ComponentSheet } from "./component-sheet";
 import { Virtualized } from "./virtualized";
 import { CursorRules } from "./cursor-rules";
 import { Footer } from "../../components/footer";
+import { ThemeToggle } from "../../components/theme-toggle";
 
 export const metadata: Metadata = {
   title: "Six years of DRAYOS | Umanga Deep Shrestha",
@@ -48,6 +49,7 @@ export default function DrayosCaseStudy() {
           <span className="text-[var(--color-text-primary)]">Work</span>
           <span className="text-[var(--color-text-muted)]">/</span>
           <span className="text-[var(--color-text-secondary)]">DRAYOS</span>
+          <span className="ml-auto"><ThemeToggle /></span>
         </div>
       </header>
 

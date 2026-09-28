@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { ThemeToggle } from "./theme-toggle";
 
 const links = [
   { href: "#work", label: "Work" },
@@ -66,12 +67,15 @@ export function Nav() {
             </a>
           ))}
         </div>
+        <div className="flex items-center gap-2">
+        <ThemeToggle />
         <a
           href="mailto:umanga.907@gmail.com"
           className="rounded-lg border border-[var(--color-border)] px-4 py-2 text-sm font-medium text-[var(--color-text-primary)] transition-colors hover:border-[var(--color-text-muted)]"
         >
           Email me
         </a>
+        </div>
       </div>
     </nav>
   );

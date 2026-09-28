@@ -16,6 +16,35 @@
   --font-mono: "Geist Mono", ui-monospace, monospace;
 }
 
+/* Theme: dark is the base. layout.tsx sets data-theme on <html> before first
+   paint (the saved choice, else dark), so light only swaps tokens. */
+:root {
+  color-scheme: dark;
+  --color-dot: rgba(255, 255, 255, 0.03);
+  --color-inset: var(--color-background);
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --color-background: #fafafa;
+  --color-surface: #ffffff;
+  --color-border: #e4e4e7;
+  --color-border-subtle: #ececef;
+  --color-text-primary: #09090b;
+  --color-text-secondary: #52525b;
+  --color-text-muted: #6b6b74;
+  --color-accent: #2563eb;
+  --color-accent-hover: #1d4ed8;
+  --color-accent-muted: #2563eb18;
+  --color-dot: rgba(0, 0, 0, 0.06);
+  --color-inset: #eeeef1;
+}
+
+:root[data-theme="light"] .theme-icon-sun,
+:root:not([data-theme="light"]) .theme-icon-moon {
+  display: none;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
