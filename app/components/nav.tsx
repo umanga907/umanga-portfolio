@@ -3,11 +3,8 @@
 import { useEffect, useState } from "react";
 
 const links = [
+  { href: "#work", label: "Work" },
   { href: "#about", label: "About" },
-  { href: "#skills", label: "Skills" },
-  { href: "#experience", label: "Experience" },
-  { href: "#projects", label: "Projects" },
-  { href: "#services", label: "Services" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -52,7 +49,7 @@ export function Nav() {
           href="#"
           className="font-mono text-sm font-medium text-[var(--color-text-primary)] transition-colors hover:text-[var(--color-accent)]"
         >
-          UDS
+          Umanga Shrestha
         </a>
         <div className="hidden items-center gap-8 md:flex">
           {links.map((link) => (
@@ -71,9 +68,9 @@ export function Nav() {
         </div>
         <a
           href="mailto:umanga.907@gmail.com"
-          className="rounded-lg bg-[var(--color-accent)] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[var(--color-accent-hover)]"
+          className="rounded-lg border border-[var(--color-border)] px-4 py-2 text-sm font-medium text-[var(--color-text-primary)] transition-colors hover:border-[var(--color-text-muted)]"
         >
-          Hire Me
+          Email me
         </a>
       </div>
     </nav>

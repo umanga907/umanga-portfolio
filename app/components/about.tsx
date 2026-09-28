@@ -4,48 +4,62 @@ import {
   SectionTitle,
 } from "./section-wrapper";
 
+const roles = [
+  { period: "2026 - now", role: "Design Engineer", company: "Freelance" },
+  { period: "2019 - 2026", role: "Director of UI/UX", company: "PortPro (DRAYOS)" },
+  { period: "2018 - 2019", role: "Frontend Developer", company: "Upwork, US and EU clients" },
+  { period: "2018", role: "Frontend Developer & UI Engineer", company: "Braindigit" },
+  { period: "2017", role: "Frontend Developer", company: "Jyaasa Technologies" },
+  { period: "2015 - 2016", role: "Web Developer", company: "Pagoda Labs, Swiss Magic" },
+];
+
 export function About() {
   return (
     <SectionWrapper id="about">
       <SectionLabel label="About" id="about-heading" />
-      <SectionTitle>Designing in code for 11 years</SectionTitle>
+      <SectionTitle>11 years on the web, six on one product</SectionTitle>
 
-      <div className="max-w-3xl space-y-6 text-base leading-relaxed md:text-lg">
-        <p>
-          For{" "}
-          <span className="text-[var(--color-text-primary)]">6+ years</span> I
-          directed UI/UX for a logistics SaaS platform used by{" "}
-          <span className="text-[var(--color-text-primary)]">
-            500+ trucking companies across the U.S.
-          </span>
-          , where I built the React component library and SCSS design system
-          from scratch and shipped{" "}
-          <span className="text-[var(--color-text-primary)]">
-            hundreds of operational screens
-          </span>{" "}
-          as one of its earliest and longest-tenured engineers.
-        </p>
+      <div className="grid gap-12 md:grid-cols-[1fr_360px]">
+        <div className="max-w-2xl space-y-5 text-base leading-relaxed text-[var(--color-text-secondary)] md:text-[17px]">
+          <p>
+            I joined PortPro in December 2019, one of its earliest hires, and owned the UX and frontend of DRAYOS until March
+            2026. I worked from Kathmandu with a team ten hours away. I rebuilt its broken CSS into a design system with dark
+            mode, redesigned the screens dispatchers live in, and virtualized every data grid so thousands of rows scroll
+            without lag.
+          </p>
+          <p>
+            Near the end I wrote the whole design system into Cursor rules, so developers with no UI background could ship
+            on-spec screens. In my last year I also worked on the product&apos;s AI features: agent chats, streaming replies
+            and approval steps.
+          </p>
+          <p>
+            I work AI-first with Claude Code and Cursor every day. They make me faster, but I still decide what gets built,
+            and I review everything before it ships.
+          </p>
+        </div>
 
-        <p>
-          I specialize in{" "}
-          <span className="text-[var(--color-text-primary)]">
-            React, TypeScript, SCSS/SASS architecture, and CSS Custom
-            Properties
-          </span>
-          . I&apos;ve shipped dark mode across an entire platform, removed legacy
-          dependencies like jQuery and react-bootstrap, hardened frontend
-          security with DOMPurify and dependency CVE remediation — and before
-          leaving, I encoded the entire design system into Cursor rules the
-          team shipped on-spec UI with.
-        </p>
-
-        <p>
-          I turn complex product requirements into{" "}
-          <span className="text-[var(--color-text-primary)]">
-            clean, maintainable, pixel-perfect UI
-          </span>
-          .
-        </p>
+        <div>
+          <h3 className="mb-4 font-mono text-xs uppercase tracking-widest text-[var(--color-text-muted)]">Experience</h3>
+          <ul className="divide-y divide-[var(--color-border)] border-y border-[var(--color-border)]">
+            {roles.map((r) => (
+              <li key={r.company} className="grid grid-cols-[96px_1fr] gap-4 py-3 text-sm">
+                <span className="font-mono text-xs leading-5 text-[var(--color-text-muted)]">{r.period}</span>
+                <span>
+                  <span className="block text-[var(--color-text-primary)]">{r.role}</span>
+                  <span className="text-[var(--color-text-muted)]">{r.company}</span>
+                </span>
+              </li>
+            ))}
+          </ul>
+          <a
+            href="https://www.linkedin.com/in/umangadeepshrestha/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-block text-sm text-[var(--color-text-secondary)] underline-offset-4 hover:text-[var(--color-text-primary)] hover:underline"
+          >
+            Full history on LinkedIn
+          </a>
+        </div>
       </div>
     </SectionWrapper>
   );

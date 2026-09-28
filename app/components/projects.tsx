@@ -1,4 +1,5 @@
 import { ArrowRight, ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import {
   SectionWrapper,
@@ -6,64 +7,77 @@ import {
   SectionTitle,
 } from "./section-wrapper";
 import { DispatchBoard } from "../work/drayos/dispatch-board";
+import { AICommand } from "../work/drayos/ai-command";
 
 type Project = {
   title: string;
   kind: "Case study" | "Live site" | "Concept";
   link: string;
   description: string;
-  tags: string[];
+  tags?: string[];
+  image?: string;
 };
 
-const featured: Project = {
+const drayos: Project = {
   title: "Six years of DRAYOS",
   kind: "Case study",
   link: "/work/drayos",
   description:
-    "Owned the frontend of a drayage TMS used by over 500 trucking companies, from a broken pile of CSS in 2019 to a component system with dark mode, virtualized grids and the design system encoded into Cursor rules. The case study rebuilds the dispatch board then and now, and lists the rest: an embedded email client, an AI workbench, the jQuery removal and security hardening.",
-  tags: ["React", "SCSS", "Design System", "Cursor Rules"],
+    "I owned the UX and frontend of a drayage TMS that over 500 trucking companies run their day on. From a broken pile of CSS in 2019 to a design system with dark mode, a redesigned dispatch board, every grid virtualized, and the whole system written into Cursor rules.",
+  tags: ["React", "SCSS", "Design System", "Data-dense UI"],
 };
 
-const projects: Project[] = [
+const agents: Project = {
+  title: "AI agents inside DRAYOS",
+  kind: "Case study",
+  link: "/work/drayos#also",
+  description:
+    "AI Command puts people, channels and AI agents in one workspace. Agents relay driver replies from SMS and file tasks that link back to the load. I designed its UI and UX. On the AI Hub chat I worked on the UI in code: agent chats with streaming replies, approval steps before an agent acts, and a stop button for long runs.",
+  tags: ["AI UX", "Agents", "Streaming UI", "React"],
+};
+
+const more: Project[] = [
   {
     title: "Interactive API docs concept",
     kind: "Concept",
     link: "https://searchapi-interactive-docs-beta.vercel.app/",
+    image: "/work/apidocs.jpg",
     description:
-      "An API's documentation page rebuilt so it holds one live request: build it while you read, run it in place, explore the response as a tree with copyable paths. Generated from the OpenAPI spec, light and dark from one token set, every text pairing measured at AA. Stimulus and Tailwind.",
+      "An API docs page rebuilt around one live request: build it while you read, run it in place, explore the response as a tree. Generated from the OpenAPI spec, every text pairing measured at AA.",
     tags: ["Stimulus", "Tailwind", "OpenAPI", "Accessibility"],
   },
   {
     title: "Tailwind style guide",
     kind: "Live site",
     link: "https://umanga907.github.io/tailwind-style-guide-sample/",
+    image: "/work/tailwind.jpg",
     description:
-      "A design system documented the way engineers use one: tokens defined once in the Tailwind config, every component in every state including error, disabled and loading, copyable markup under each.",
+      "A design system documented the way engineers use one: tokens defined once in the config, every component in every state, copyable markup under each.",
     tags: ["Tailwind", "Design System", "Documentation"],
   },
+];
+
+const clients: Project[] = [
   {
     title: "Saurav Decor",
     kind: "Live site",
     link: "https://sauravdecor.com",
-    description:
-      "Full-stack business site designed and built end-to-end in TypeScript: Next.js, Prisma, admin dashboard, transactional email. From brand to database, one person.",
-    tags: ["TypeScript", "Next.js", "Prisma", "Design in Code"],
+    image: "/work/saurav.jpg",
+    description: "Business site and admin dashboard, designed and built end to end in TypeScript and Next.js.",
   },
   {
-    title: "Esther Perez, fine-art gallery",
+    title: "Esther Perez",
     kind: "Live site",
     link: "https://estherperez.com",
-    description:
-      "Custom editorial gallery site for a fine-art photographer: typography-first layout, bespoke framing plugin, art direction to production by one person. Zero templates.",
-    tags: ["Web Design", "Typography", "Editorial", "WordPress"],
+    image: "/work/esther.jpg",
+    description: "Editorial gallery for a fine-art painter, typography first, with a custom framing plugin.",
   },
   {
-    title: "Arcadian Sky, literary press concept",
+    title: "Arcadian Sky",
     kind: "Concept",
     link: "https://arcadian-sky-concept.vercel.app",
-    description:
-      "Homepage concept for a literary brand: starfield, engraved-tree hero, serif typography. Calm built structurally, not decoratively.",
-    tags: ["Concept", "Art Direction", "Typography", "Motion"],
+    image: "/work/arcadian.jpg",
+    description: "Homepage concept for a literary press: starfield, engraved tree, serif type.",
   },
 ];
 
@@ -73,8 +87,8 @@ const host = (link: string) => new URL(link).host.replace(/^www\./, "");
 /* The whole card is the link: the title's anchor stretches over the card with
  * an ::after overlay, so the heading stays the accessible name and there is
  * one tab stop per project. */
-function CardLink({ project, className = "" }: { project: Project; className?: string }) {
-  const cls = `after:absolute after:inset-0 after:rounded-xl focus-visible:outline-none ${className}`;
+function CardLink({ project }: { project: Project }) {
+  const cls = "after:absolute after:inset-0 after:z-10 after:rounded-xl focus-visible:outline-none";
   return isInternal(project.link) ? (
     <Link href={project.link} className={cls}>
       {project.title}
@@ -87,15 +101,15 @@ function CardLink({ project, className = "" }: { project: Project; className?: s
   );
 }
 
-function Cta({ link, kind }: { link: string; kind: Project["kind"] }) {
-  return isInternal(link) ? (
+function Cta({ project }: { project: Project }) {
+  return isInternal(project.link) ? (
     <span className="inline-flex items-center gap-1.5 text-sm font-medium text-[var(--color-accent)]">
       Read the case study
       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
     </span>
   ) : (
     <span className="inline-flex items-center gap-1.5 text-sm font-medium text-[var(--color-text-secondary)] transition-colors group-hover:text-[var(--color-text-primary)]">
-      {kind === "Concept" ? "Open the demo" : "Visit the site"}
+      {project.kind === "Concept" ? "Open the demo" : "Visit the site"}
       <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
     </span>
   );
@@ -103,13 +117,14 @@ function Cta({ link, kind }: { link: string; kind: Project["kind"] }) {
 
 function Kind({ kind }: { kind: Project["kind"] }) {
   return (
-    <p className="mb-3 font-mono text-[11px] uppercase tracking-widest text-[var(--color-text-muted)]">
+    <p className="mb-2 font-mono text-[11px] uppercase tracking-widest text-[var(--color-text-muted)]">
       {kind}
     </p>
   );
 }
 
-function Tags({ tags }: { tags: string[] }) {
+function Tags({ tags }: { tags?: string[] }) {
+  if (!tags) return null;
   return (
     <div className="flex flex-wrap gap-2">
       {tags.map((tag) => (
@@ -125,55 +140,112 @@ function Tags({ tags }: { tags: string[] }) {
 }
 
 const card =
-  "group relative flex flex-col rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] transition-colors hover:border-[var(--color-text-muted)] focus-within:ring-2 focus-within:ring-[var(--color-accent)] focus-within:ring-offset-2 focus-within:ring-offset-[var(--color-background)]";
+  "group relative flex flex-col overflow-hidden rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] transition-colors hover:border-[var(--color-text-muted)] focus-within:ring-2 focus-within:ring-[var(--color-accent)] focus-within:ring-offset-2 focus-within:ring-offset-[var(--color-background)]";
+
+/* A recreated product screen, cropped and faded at the bottom like a window
+ * peeking out of the card. Decorative here; the case study carries the
+ * described version. */
+function Preview({ children }: { children: React.ReactNode }) {
+  return (
+    <div
+      aria-hidden
+      className="pointer-events-none relative overflow-hidden border-b border-[var(--color-border)] bg-[var(--color-background)] px-6 pb-6 pt-6 sm:h-[300px] sm:pb-0 md:h-[380px] md:px-10 md:pt-10"
+    >
+      <div className="transition-transform duration-500 ease-out group-hover:-translate-y-2">
+        {children}
+      </div>
+      <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-[var(--color-background)] to-transparent sm:h-24" />
+    </div>
+  );
+}
+
+function Featured({ project, preview }: { project: Project; preview: React.ReactNode }) {
+  return (
+    <article className={card}>
+      <Preview>{preview}</Preview>
+      <div className="grid gap-6 p-6 md:grid-cols-[1fr_auto] md:items-end md:p-8">
+        <div>
+          <Kind kind={project.kind} />
+          <h3 className="mb-3 text-2xl font-semibold tracking-tight text-[var(--color-text-primary)]">
+            <CardLink project={project} />
+          </h3>
+          <p className="mb-5 max-w-2xl text-sm leading-relaxed text-[var(--color-text-secondary)] md:text-[15px]">
+            {project.description}
+          </p>
+          <Tags tags={project.tags} />
+        </div>
+        <Cta project={project} />
+      </div>
+    </article>
+  );
+}
+
+function Thumb({ src, title }: { src: string; title: string }) {
+  return (
+    <div className="relative aspect-[16/10] overflow-hidden border-b border-[var(--color-border)] bg-[var(--color-background)]">
+      <Image
+        src={src}
+        alt={`${title}, home page`}
+        fill
+        sizes="(min-width: 1024px) 480px, (min-width: 768px) 50vw, 100vw"
+        className="object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+      />
+    </div>
+  );
+}
 
 export function Projects() {
   return (
-    <SectionWrapper id="projects">
-      <SectionLabel label="Projects" id="projects-heading" />
+    <SectionWrapper id="work">
+      <SectionLabel label="Selected work" id="work-heading" />
       <SectionTitle>What I&apos;ve built</SectionTitle>
 
-      <article className={`${card} mb-6 overflow-hidden`}>
-        <div
-          aria-hidden
-          className="pointer-events-none relative overflow-hidden pb-6 sm:pb-0 border-b border-[var(--color-border)] bg-[var(--color-background)] px-6 pt-6 sm:h-[300px] md:h-[380px] md:px-10 md:pt-10"
-        >
-          <div className="transition-transform duration-500 ease-out group-hover:-translate-y-2">
-            <DispatchBoard />
-          </div>
-          <div className="absolute inset-x-0 bottom-0 h-10 sm:h-24 bg-gradient-to-t from-[var(--color-background)] to-transparent" />
-        </div>
+      <div className="space-y-6">
+        <Featured project={drayos} preview={<DispatchBoard />} />
+        <Featured project={agents} preview={<AICommand />} />
 
-        <div className="grid gap-6 p-6 md:grid-cols-[1fr_auto] md:items-end md:p-8">
-          <div>
-            <Kind kind={featured.kind} />
-            <h3 className="mb-3 text-2xl font-semibold tracking-tight text-[var(--color-text-primary)]">
-              <CardLink project={featured} />
-            </h3>
-            <p className="mb-5 max-w-2xl text-sm leading-relaxed text-[var(--color-text-muted)] md:text-[15px]">
-              {featured.description}
-            </p>
-            <Tags tags={featured.tags} />
-          </div>
-          <Cta link={featured.link} kind={featured.kind} />
+        <div className="grid gap-6 md:grid-cols-2">
+          {more.map((project) => (
+            <article key={project.title} className={card}>
+              {project.image && <Thumb src={project.image} title={project.title} />}
+              <div className="flex flex-1 flex-col p-6">
+                <Kind kind={project.kind} />
+                <h3 className="mb-2 text-lg font-semibold text-[var(--color-text-primary)]">
+                  <CardLink project={project} />
+                </h3>
+                <p className="mb-4 text-sm leading-relaxed text-[var(--color-text-secondary)]">
+                  {project.description}
+                </p>
+                <div className="mb-6">
+                  <Tags tags={project.tags} />
+                </div>
+                <div className="mt-auto">
+                  <Cta project={project} />
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
-      </article>
+      </div>
 
-      <div className="grid gap-6 md:grid-cols-2">
-        {projects.map((project) => (
-          <article key={project.title} className={`${card} p-6 md:odd:last:col-span-2`}>
-            <Kind kind={project.kind} />
-            <h3 className="mb-3 text-lg font-semibold text-[var(--color-text-primary)]">
-              <CardLink project={project} />
-            </h3>
-            <p className="mb-4 text-sm leading-relaxed text-[var(--color-text-muted)]">
-              {project.description}
-            </p>
-            <div className="mb-6">
-              <Tags tags={project.tags} />
-            </div>
-            <div className="mt-auto">
-              <Cta link={project.link} kind={project.kind} />
+      <h3 className="mb-6 mt-16 font-mono text-xs uppercase tracking-widest text-[var(--color-text-muted)]">
+        Client work and concepts
+      </h3>
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {clients.map((project) => (
+          <article key={project.title} className={card}>
+            {project.image && <Thumb src={project.image} title={project.title} />}
+            <div className="flex flex-1 flex-col p-5">
+              <Kind kind={project.kind} />
+              <h4 className="mb-2 font-semibold text-[var(--color-text-primary)]">
+                <CardLink project={project} />
+              </h4>
+              <p className="mb-5 text-sm leading-relaxed text-[var(--color-text-secondary)]">
+                {project.description}
+              </p>
+              <div className="mt-auto">
+                <Cta project={project} />
+              </div>
             </div>
           </article>
         ))}
