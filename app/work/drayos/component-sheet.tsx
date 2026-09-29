@@ -64,7 +64,7 @@ export function ComponentSheet({ theme }: { theme: keyof typeof THEMES }) {
             </div>
             <div>
               <div className="mb-1 text-[11px] text-[var(--mu)]">Customer</div>
-              <div className="flex h-8 items-center rounded border border-[var(--bd)] bg-[var(--sf)] px-2.5"><span className="flex-1">Harbor Freight</span><ChevronDown className="h-3.5 w-3.5 text-[var(--mu)]" /></div>
+              <div className="flex h-8 items-center rounded border border-[var(--bd)] bg-[var(--sf)] px-2.5"><span className="flex-1">Harbor Imports</span><ChevronDown className="h-3.5 w-3.5 text-[var(--mu)]" /></div>
             </div>
             <div>
               <div className="mb-1 text-[11px] text-[var(--mu)]">Container #</div>
@@ -105,7 +105,7 @@ export function ComponentSheet({ theme }: { theme: keyof typeof THEMES }) {
         <Box className="col-span-5">
           <Label>Route timeline · a load's moves, in order</Label>
           <div className="flex items-start">
-            {[["Pull", Anchor, "APM Terminal", "done"], ["Deliver", Truck, "Harbor Freight", "done"], ["Drop", Warehouse, "Northstar Yard", "now"], ["Return", Container, "GCT Bayonne", "todo"]].map(([t, I, w, st], i, a) => {
+            {[["Pull", Anchor, "APM Terminal", "done"], ["Deliver", Truck, "Harbor Imports", "done"], ["Drop", Warehouse, "Northstar Yard", "now"], ["Return", Container, "GCT Bayonne", "todo"]].map(([t, I, w, st], i, a) => {
               const Icon = I as typeof Truck;
               const c = st === "done" ? "var(--ok)" : st === "now" ? "var(--pr)" : "var(--bd)";
               return (
@@ -158,7 +158,7 @@ export function ComponentSheet({ theme }: { theme: keyof typeof THEMES }) {
           <Label>Chat &amp; alerts</Label>
           <div className="space-y-1.5 text-[12px]">
             <div className="max-w-[85%] rounded-md rounded-tl-none bg-[var(--sf2)] px-2.5 py-1.5">Container released at APM, heading out now.</div>
-            <div className="ml-auto max-w-[85%] rounded-md rounded-tr-none bg-[var(--pr)] px-2.5 py-1.5 text-white">Copy. Deliver to Harbor Freight, door 4.</div>
+            <div className="ml-auto max-w-[85%] rounded-md rounded-tr-none bg-[var(--pr)] px-2.5 py-1.5 text-white">Copy. Deliver to Harbor Imports, door 4.</div>
             <div className="flex h-8 items-center gap-2 rounded border border-[var(--bd)] bg-[var(--sf)] px-2 text-[var(--mu)]"><Paperclip className="h-3.5 w-3.5" /><span className="flex-1">Message driver…</span><Send className="h-3.5 w-3.5 text-[var(--pr)]" /></div>
           </div>
           <div className="mt-3 flex items-start gap-2 rounded border border-[var(--wa)]/50 bg-[var(--wa)]/10 px-2.5 py-1.5 text-[11.5px]"><AlertTriangle className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[var(--wa)]" />LFD is tomorrow. Per-diem starts after.</div>
