@@ -26,15 +26,15 @@ type Tone = "pending" | "empty" | "loaded" | "enroute";
 type Row = { id: string; customer: string; distance: string; status: string; tone: Tone; where?: string; pickup?: string; driver?: string };
 
 const ROWS: Row[] = [
-  { id: "LD2K_M108463", customer: "Harbor Freight", distance: "0.00", status: "Pending", tone: "pending" },
-  { id: "LD2K_M108462", customer: "Harbor Freight", distance: "367.90", status: "Pending", tone: "pending", pickup: "09/17 10:15 PM" },
-  { id: "LD2K_M108461", customer: "Harbor Freight", distance: "367.90", status: "Pending", tone: "pending", pickup: "09/17 10:15 PM" },
-  { id: "LD2K_M108460", customer: "Harbor Freight", distance: "367.90", status: "Pending", tone: "pending", pickup: "09/17 10:15 PM" },
-  { id: "LD2K_M108459", customer: "Northstar Test Org", distance: "367.90", status: "Dropped - Empty", tone: "empty", where: "Sample Company TEST", driver: "Abcd Dcev" },
-  { id: "LD2K_M108458", customer: "Northstar Test Org", distance: "367.90", status: "Dropped - Loaded", tone: "loaded", where: "Harbor Freight", driver: "Abcd Dcev" },
-  { id: "LD2K_M108457", customer: "Harbor Freight", distance: "367.90", status: "Enroute To Deliver Load", tone: "enroute", where: "Harbor Freight", pickup: "09/16 04:00 PM", driver: "Akanshaa G" },
-  { id: "LD2K_M108456", customer: "Harbor Freight", distance: "367.90", status: "Enroute To Deliver Load", tone: "enroute", where: "Harbor Freight", pickup: "09/15 12:00 PM", driver: "Brian Millma" },
-  { id: "LD2K_M108455", customer: "Harbor Freight", distance: "2678.65", status: "Enroute To Deliver Load", tone: "enroute", where: "Som Consignee", driver: "Akanshaa G" },
+  { id: "LD2K_M108463", customer: "Harbor Imports", distance: "0.00", status: "Pending", tone: "pending" },
+  { id: "LD2K_M108462", customer: "Harbor Imports", distance: "367.90", status: "Pending", tone: "pending", pickup: "09/17 10:15 PM" },
+  { id: "LD2K_M108461", customer: "Harbor Imports", distance: "367.90", status: "Pending", tone: "pending", pickup: "09/17 10:15 PM" },
+  { id: "LD2K_M108460", customer: "Harbor Imports", distance: "367.90", status: "Pending", tone: "pending", pickup: "09/17 10:15 PM" },
+  { id: "LD2K_M108459", customer: "Northstar Logistics", distance: "367.90", status: "Dropped - Empty", tone: "empty", where: "Bayside Warehouse", driver: "D. Morales" },
+  { id: "LD2K_M108458", customer: "Northstar Logistics", distance: "367.90", status: "Dropped - Loaded", tone: "loaded", where: "Harbor Imports", driver: "D. Morales" },
+  { id: "LD2K_M108457", customer: "Harbor Imports", distance: "367.90", status: "Enroute To Deliver Load", tone: "enroute", where: "Harbor Imports", pickup: "09/16 04:00 PM", driver: "J. Patel" },
+  { id: "LD2K_M108456", customer: "Harbor Imports", distance: "367.90", status: "Enroute To Deliver Load", tone: "enroute", where: "Harbor Imports", pickup: "09/15 12:00 PM", driver: "R. Okafor" },
+  { id: "LD2K_M108455", customer: "Harbor Imports", distance: "2678.65", status: "Enroute To Deliver Load", tone: "enroute", where: "Eastgate Depot", driver: "J. Patel" },
 ];
 
 const CHIP: Record<Tone, string> = {
